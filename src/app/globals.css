@@ -1,21 +1,42 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-primary: hsl(24, 9.8%, 10%);
+  --background-secondary: hsl(12, 6%, 15%);
+  --foreground-primary: hsl(60, 4.8%, 95.9%);
+  --foreground-secondary: hsl(24, 5%, 64%);
+  --black: hsl(240, 10%, 4%);
+  --white: hsl(0, 0%, 98%);
+  --red-background: hsl(0, 72.2%, 50.6%);
+  --red-foreground: hsl(0, 93.3%, 94.1%);
+  --green-background: hsl(142.8, 64.2%, 24.1%);
+  --green-foreground: hsl(140.6, 84.2%, 92.5%);
+  --stroke: hsl(12, 6.5%, 15.1%);
+  --linkedin: hsl(210, 90.2%, 40%);
+  --destructive: hsl(1, 79%, 45%);
+  --destructive-foreground: hsl(15 0% 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme inline {
+  /* Color theme */
+  --color-background-primary: var(--background-primary);
+  --color-background-secondary: var(--background-secondary);
+  --color-foreground-primary: var(--foreground-primary);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-red-background: var(--red-background);
+  --color-red-foreground: var(--red-foreground);
+  --color-green-background: var(--green-background);
+  --color-green-foreground: var(--green-foreground);
+  --color-stroke: var(--stroke);
+  --color-linkedin: var(--linkedin);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+}
+
+@layer base {
+  body {
+    @apply bg-black;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
