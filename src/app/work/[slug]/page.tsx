@@ -16,10 +16,10 @@ export default function ProjectPage() {
 
   const project: Project | undefined = allProjects.find((project) => project.slug === slug)
 
-  if (!project) {
+  if (!slug || !project) {
     return (
-      <main>
-        <h1>Project not found</h1>
+      <main className="h-[80vh] flex justify-center items-center">
+        <Tile transitionFrom="bottom" className="text-foreground-primary text-3xl text-center">Project not found :(</Tile>
       </main>
     )
   }

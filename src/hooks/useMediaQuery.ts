@@ -1,31 +1,42 @@
 "use client"
 
-export default function useMediaQuery(query: string) {
-  const width = window.innerWidth
+import { useEffect, useState } from "react"
 
-  console.log("width:", width)
+type MediaQuery = "sm" | "md" | "lg" | "xl" | "2xl"
 
-  let querySize: number = 0
+export default function useMediaQuery(query: MediaQuery) {
+  const [isMatched, setIsMatched] = useState(false)
 
-  switch (query) {
-    case "sm":
-      querySize = 640
-      break
-    case "md":
-      querySize = 768
-      break
-    case "lg":
-      querySize = 1024
-      break
-    case "xl":
-      querySize = 1280
-      break
-    case "2xl":
-      querySize = 1536
-      break
-    default:
-      break
-  }
+  useEffect(() => {
+    if (typeof window === "undefined") return
 
-  return width >= querySize
+    const getQuerySize = (query: MediaQuery) => {
+      switch (query) {
+        case "sm":
+          return 640
+        case "md":
+          return 768
+        case "lg":
+          return 1024
+        case "xl":
+          return 1280
+        case "2xl":
+          return 1536
+        default:
+          return 0
+      }
+    }
+
+    const handleResize = () => {
+      const width = window.innerWidth
+      setIsMatched(width >= getQuerySize(query))
+    }
+
+    handleResize()
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [query])  
+
+  return isMatched
 }
