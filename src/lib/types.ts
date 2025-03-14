@@ -9,12 +9,13 @@ export type Job = {
 
 export type Project = {
   title: string
+  slug: string
   type: string
-  description: string
-  image: string
+  shortDescription: string
+  longDescription: string
+  images: string[]
   width?: number
   height?: number
-  url: string
 }
 
 export type Testimonial = {

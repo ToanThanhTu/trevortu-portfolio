@@ -83,7 +83,7 @@ export default function Contact() {
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Tell me more..." {...field} className="xl:min-h-35" />
+                  <Textarea placeholder="Tell me more..." {...field} className="xl:min-h-36" />
                 </FormControl>
                 <FormMessage />
               </FormItem>

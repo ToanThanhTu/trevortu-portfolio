@@ -22,11 +22,11 @@ export default function Tile({
         initial={{
           opacity: 0,
           x: transitionFrom === "left" ? -50 : transitionFrom === "right" ? 50 : 0,
-          y: transitionFrom === "bottom" ? 40 : 0,
+          y: transitionFrom === "bottom" ? 50 : 0,
         }}
         transition={{ duration: 0.5 }}
         whileInView={{ opacity: 1, x: 0, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <div
           className={cn(

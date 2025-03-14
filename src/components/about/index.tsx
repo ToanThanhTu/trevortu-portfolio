@@ -25,8 +25,8 @@ export default function About() {
           </Tile>
 
           <motion.div
-            initial={{ scale: 3 }}
-            whileInView={{ scale: 1 }}
+            initial={{ scale: 3, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
@@ -46,7 +46,7 @@ export default function About() {
         </div>
 
         <div className={cn("md:grid md:grid-cols-2 md:gap-4")}>
-          <Tile transitionFrom="left" className={cn("md:my-0 md:h-full md:h-60")}>
+          <Tile transitionFrom="left" className={cn("md:my-0 md:h-60", "xl:h-72")}>
             <p className="text-foreground-primary">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et
               consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus.

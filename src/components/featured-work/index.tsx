@@ -3,7 +3,7 @@
 import ProjectTile from "@/components/featured-work/ProjectTile"
 import Tile from "@/components/tile/Tile"
 import useMediaQuery from "@/hooks/useMediaQuery"
-import { projects } from "@/lib/data"
+import { featuredProjects } from "@/lib/data"
 import { cn } from "@/lib/utils"
 
 export default function FeaturedWork() {
@@ -23,11 +23,11 @@ export default function FeaturedWork() {
             <h2 className="uppercase text-4xl text-center italic font-semibold">Featured Work</h2>
           </Tile>
 
-          <ProjectTile project={projects[0]} transitionFrom={isXl ? "left" : "bottom"} />
+          <ProjectTile project={featuredProjects[0]} transitionFrom={isXl ? "left" : "bottom"} className={cn("lg:h-[360px]", "xl:h-[315px]")} />
         </div>
 
         <ProjectTile
-          project={projects[1]}
+          project={featuredProjects[1]}
           className={cn("h-[350px] overflow-hidden rounded-xl", "md:h-[470px]", "xl:h-[430px]")}
           transitionFrom={isXl ? "bottom" : "right"}
         />
@@ -40,8 +40,8 @@ export default function FeaturedWork() {
           "xl:flex xl:flex-col xl:basis-1/3 xl:gap-4"
         )}
       >
-        <ProjectTile project={projects[2]} transitionFrom={isXl ? "right" : "left"} className={cn("xl:overflow-hidden xl:rounded-xl")} />
-        <ProjectTile project={projects[3]} transitionFrom="right" />
+        <ProjectTile project={featuredProjects[2]} transitionFrom={isXl ? "right" : "left"} className={cn("xl:overflow-hidden xl:rounded-xl")} />
+        <ProjectTile project={featuredProjects[3]} transitionFrom="right" />
       </div>
     </div>
   )
