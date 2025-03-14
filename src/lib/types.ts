@@ -16,3 +16,10 @@ export type Project = {
   height?: number
   url: string
 }
+
+export type Testimonial = {
+  name: string
+  title: string
+  testimonial: string
+  companyLogo: string
+}

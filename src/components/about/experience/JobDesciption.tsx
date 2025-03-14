@@ -10,8 +10,8 @@ export default function JobDescription({
 }: Job) {
   return (
     <div className="border-b border-stroke py-3">
-      <h1 className="capitalized text-2xl font-medium leading-none">{title}</h1>
-      <h2 className="capitalized italic text-xl leading-none">
+      <h1 className="capitalized text-xl font-medium leading-6">{title}</h1>
+      <h2 className="capitalized italic text-lg leading-6">
         {company} - {location}
       </h2>
       <h3 className="text-sm text-foreground-secondary leading-7">

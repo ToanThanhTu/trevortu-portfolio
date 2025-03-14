@@ -5,25 +5,38 @@ import { PropsWithChildren } from "react"
 import { motion } from "motion/react"
 
 interface Props {
+  containerClassName?: string
   className?: string
-  transitionFrom?: "left" | "right"
+  transitionFrom?: "left" | "right" | "bottom"
 }
 
-export default function Tile({ children, className, transitionFrom }: PropsWithChildren<Props>) {
+export default function Tile({
+  children,
+  containerClassName,
+  className,
+  transitionFrom,
+}: PropsWithChildren<Props>) {
   return (
-    <motion.div
-      initial={{ visibility: "hidden", position: "fixed", left: transitionFrom == "left" ? -9000 : 9000 }}
-      animate={{ x: 0, visibility: "visible", position: "relative", left: 0 }}
-      transition={{ duration: 0.7 }}
-    >
-      <div
-        className={cn(
-          "bg-background-primary px-6 pt-6 pb-8 text-foreground-primary border border-stroke rounded-xl my-4",
-          className
-        )}
+    <div className={cn("overflow-hidden relative", containerClassName)}>
+      <motion.div
+        initial={{
+          opacity: 0,
+          x: transitionFrom === "left" ? -50 : transitionFrom === "right" ? 50 : 0,
+          y: transitionFrom === "bottom" ? 40 : 0,
+        }}
+        transition={{ duration: 0.5 }}
+        whileInView={{ opacity: 1, x: 0, y: 0 }}
+        viewport={{ once: true }}
       >
-        {children}
-      </div>
-    </motion.div>
+        <div
+          className={cn(
+            "bg-background-primary px-6 pt-6 pb-8 text-foreground-primary border border-stroke rounded-xl my-4",
+            className
+          )}
+        >
+          {children}
+        </div>
+      </motion.div>
+    </div>
   )
 }

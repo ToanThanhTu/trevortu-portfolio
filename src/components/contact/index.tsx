@@ -16,6 +16,7 @@ import { Button } from "@/components/shadcn/button"
 import Tile from "@/components/tile/Tile"
 import { Textarea } from "@/components/shadcn/textarea"
 import { toast } from "sonner"
+import { cn } from "@/lib/utils"
 
 export default function Contact() {
   const controller = useForm<ContactFormSchemaType>({
@@ -39,7 +40,7 @@ export default function Contact() {
   }
 
   return (
-    <Tile>
+    <Tile className={cn("md:mb-0")} transitionFrom="bottom">
       <h2 className="uppercase text-3xl font-medium py-2 border-b border-stroke">Contact Me</h2>
 
       <Form {...controller}>
@@ -82,7 +83,7 @@ export default function Contact() {
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Tell me more..." {...field} />
+                  <Textarea placeholder="Tell me more..." {...field} className="xl:min-h-35" />
                 </FormControl>
                 <FormMessage />
               </FormItem>

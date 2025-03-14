@@ -14,22 +14,22 @@ export default function Header() {
     <motion.header initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.3 }}>
       <header
         className={cn(
-          "uppercase fixed top-4 left-4 right-4 bg-background-primary py-4 px-5 text-foreground-primary border border-stroke rounded-xl overflow-hidden h-18 z-50",
-          "transition-all duration-300 ease-in-out",
-          isMenuOpen ? "h-58 opacity-100 md:h-18" : "",
-          "xl:max-w-screen-xl xl:mx-auto"
+          "uppercase fixed top-4 left-4 right-4 mx-auto bg-background-primary py-4 px-5 text-foreground-primary border border-stroke rounded-xl overflow-hidden h-18 z-50",
+          "transition-[height] duration-300 ease-in-out",
+          isMenuOpen ? "h-58 md:h-18" : "",
+          "xl:max-w-[1248px] xl:mx-auto",
         )}
       >
         <div className={cn("flex items-center justify-between gap-4 w-full")}>
-          <h1 className="text-2xl">
+          <Link href="/" className="text-2xl">
             <span className="italic font-base">Trevor</span>
             <span className="font-semibold">Portfolio</span>
-          </h1>
+          </Link>
 
           {/* Mobile menu button */}
           <Button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={cn("p-0 block", "lg:hidden")}
+            className={cn("p-0 block", "md:hidden")}
           >
             <motion.div animate={{ rotate: isMenuOpen ? 90 : 0 }} transition={{ duration: 0.3 }}>
               {isMenuOpen ? (
@@ -41,8 +41,8 @@ export default function Header() {
           </Button>
 
           {/* Desktop navigation */}
-          <nav className={cn("hidden", "lg:block")}>
-            <ul className="flex gap-4">
+          <nav className={cn("hidden", "md:block")}>
+            <ul className="flex gap-12 justify-center mx-4">
               <li>
                 <Link href="/">About</Link>
               </li>
@@ -62,7 +62,7 @@ export default function Header() {
             "opacity-0",
             "py-4 transition-all duration-300 ease-in-out",
             isMenuOpen ? "opacity-100" : "",
-            "lg:hidden"
+            "md:hidden"
           )}
         >
           <ul className="flex flex-col gap-5 text-2xl">

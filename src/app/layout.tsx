@@ -20,16 +20,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={cn(`${geistSans.variable} ${geistMono.variable} antialiased bg-black w-screen`)}
+        className={cn(`${geistSans.variable} ${geistMono.variable} antialiased bg-black overflow-x-hidden`)}
       >
         <div
           className={cn(
-            "relative flex flex-col h-full overflow-hidden",
+            "relative flex flex-col h-full my-4",
             "xl:max-w-screen-xl xl:mx-auto"
           )}
         >
           <Header />
-          <div className="p-4 mt-18">{children}</div>
+          <div className="mx-4 mt-18">{children}</div>
           <Footer />
           <Toaster richColors />
         </div>

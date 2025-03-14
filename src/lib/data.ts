@@ -2,7 +2,7 @@ import { Job, Project } from "@/lib/types"
 
 export const experience: Job[] = [
   {
-    title: "Software Engineer",
+    title: "Web Developer",
     company: "Freelance",
     location: "Sydney, NSW",
     start_date: "2023",
@@ -11,7 +11,7 @@ export const experience: Job[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo.",
   },
   {
-    title: "Software Engineer",
+    title: "Senior Software Engineer",
     company: "InfoSys",
     location: "Sydney, NSW",
     start_date: "2021",
