@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { geistMono, geistSans } from "@/fonts"
+import { montserrat } from "@/fonts"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
 import { cn } from "@/lib/utils"
@@ -18,18 +18,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={cn(`${geistSans.variable} ${geistMono.variable} antialiased bg-black overflow-x-hidden`)}
-      >
-        <div
-          className={cn(
-            "relative flex flex-col h-full my-4",
-            "xl:max-w-screen-xl xl:mx-auto"
-          )}
-        >
+    <html lang="en" className={cn("scroll-smooth antialiased", montserrat.className)}>
+      <body className={cn(`bg-black min-w-[380px]`)}>
+        <div className={cn("relative flex flex-col w-full h-full my-4 overflow-hidden")}>
           <Header />
-          <div className="mx-4 mt-18">{children}</div>
+          <div className={cn("mx-4 mt-20", "2xl:max-w-screen-xl 2xl:mx-auto 2xl:px-4")}>
+            {children}
+          </div>
           <Footer />
           <Toaster richColors />
         </div>

@@ -1,4 +1,4 @@
-import { Job, Project } from "@/lib/types"
+import { Job, Project, Quote, Testimonial } from "@/lib/types"
 
 export const experience: Job[] = [
   {
@@ -32,75 +32,155 @@ export const experience: Job[] = [
 
 export const featuredProjects: Project[] = [
   {
-    title: "Project 1",
-    slug: "project-1",
+    title: "PI Padel Club",
+    slug: "pi-padel-club",
     type: "Web Application",
     shortDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus.",
     longDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo.",
-    images: ["https://placehold.co/400x400", "https://placehold.co/600x300", "https://placehold.co/600x300"],
+    images: ["/pi-padel-club/main.webp", "/pi-padel-club/secondary-1.webp", "/pi-padel-club/secondary-2.webp"],
     width: 400,
     height: 400,
+    url: "https://pi-padel.club",
   },
   {
-    title: "Project 2",
-    slug: "project-2",
-    type: "Mobile Application",
+    title: "CSA Landing Pages",
+    slug: "csa-landing-pages",
+    type: "Web Development",
     shortDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus.",
     longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo.",
-    images: ["https://placehold.co/400x600", "https://placehold.co/600x300", "https://placehold.co/600x300"],
+    images: ["/csa-landing-pages/main.webp", "/csa-landing-pages/secondary-1.webp", "/csa-landing-pages/secondary-2.webp"],
     width: 400,
     height: 600,
+    url: "http://csa-landing.futurisen.com"
   },
   {
-    title: "Project 3",
-    slug: "project-3",
-    type: "Web Application",
+    title: "Bato Studio",
+    slug: "bato-studio",
+    type: "Web Development",
     shortDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus.",
     longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo.",
-    images: ["https://placehold.co/600x300", "https://placehold.co/600x300", "https://placehold.co/600x300"],
+    images: ["/bato-studio/main.webp", "/bato-studio/secondary-1.webp", "/bato-studio/secondary-2.webp"],
     width: 600,
     height: 300,
+    url: "https://batostudio.com.au"
   },
   {
-    title: "Project 4",
-    slug: "project-4",
-    type: "Mobile Application",
+    title: "Rush Espresso Bar",
+    slug: "rush-espresso-bar",
+    type: "Web Development",
     shortDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus.",
     longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo.",
-    images: ["https://placehold.co/600x300", "https://placehold.co/600x300", "https://placehold.co/600x300"],
-    width: 600,
-    height: 300,
+    images: ["/rush-espresso-bar/main.webp", "/rush-espresso-bar/secondary-1.webp", "/rush-espresso-bar/secondary-2.webp"],
+    width: 400,
+    height: 600,
+    url: "https://rush-espresso-bar.vercel.app"
   },
 ]
 
 export const otherProjects: Project[] = [
   {
-    title: "Project 5",
-    slug: "project-5",
-    type: "Web Application",
+    title: "Next Net Shop",
+    slug: "next-net-shop",
+    type: "Full Stack Development",
     shortDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus.",
     longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo.",
-    images: ["https://placehold.co/400x400", "https://placehold.co/600x300", "https://placehold.co/600x300"],
-    width: 400,
-    height: 400,
+    images: ["/next-net-shop/main.webp", "/next-net-shop/secondary-1.webp", "/next-net-shop/secondary-2.webp"],
+    width: 600,
+    height: 300,
+    url: "https://nextnetshop-h0frhvgkfuh3fzbb.australiaeast-01.azurewebsites.net"
   },
   {
-    title: "Project 6",
-    slug: "project-6",
-    type: "Mobile Application",
+    title: "TODO App",
+    slug: "todo-app",
+    type: "Full Stack Development",
     shortDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus.",
     longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo.",
-    images: ["https://placehold.co/400x600", "https://placehold.co/600x300", "https://placehold.co/600x300"],
+    images: ["/todo-app/main.webp", "/todo-app/secondary-1.webp", "/todo-app/secondary-2.webp"],
     width: 400,
-    height: 600,
+    height: 400,
+    url: "https://todoapp-backend.fly.dev"
   },
 ]
 
 export const allProjects = [...featuredProjects, ...otherProjects]
+
+export const testimonials: Testimonial[] = [
+    {
+      name: "Fredrick Widjaya",
+      title: "Lead Software Engineer",
+      testimonial:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus.",
+      companyLogo: "/testimonials/futurisen.webp",
+    },
+    {
+      name: "Kiran Kumar",
+      title: "Lead Software Engineer",
+      testimonial:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus.",
+      companyLogo: "/testimonials/wipro.svg",
+    },
+    {
+      name: "Vysakh Shaji",
+      title: "Senior Software Engineer",
+      testimonial:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus.",
+      companyLogo: "/testimonials/infosys.svg",
+    },
+    {
+      name: "Jeffrey Widjaya",
+      title: "Quality Assurance",
+      testimonial:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus.",
+      companyLogo: "/testimonials/futurisen.webp",
+    },
+  ]
+
+export const quotes: Quote[] = [
+  {
+    quote: "It's OK to figure out murder mysteries, but you shouldn't need to figure out code. You should be able to read it.",
+    author: "Steve C McConnell"
+  },
+  {
+    quote: "God is real, unless declared integer.",
+    author: "Anonymous"
+  },
+  {
+    quote: "Pasting code from the internet into production code is like chewing gum found in the street.",
+    author: "Mike Johnson"
+  },
+  {
+    quote: "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday's code.",
+    author: "Christopher Thompson"
+  },
+  {
+    quote: "Software is like sex: it's better when it's free.",
+    author: "Linus Thorvalds"
+  },
+  {
+    quote: "Commenting your code is like cleaning your bathroom - you never want to do it, but it really does create a more pleasant experience for you and your guests.",
+    author: "Ryan Campbell"
+  },
+  {
+    quote: "I don't care if it works on your machine! We are not shipping your machine!",
+    author: "Vidiu Platon"
+  },
+  {
+    quote: 'A SQL query walks into a bar. He approaches two tables and says, "Mind if I join you?"',
+    author: "Anonymous"
+  },
+  {
+    quote: "Why do programmers prefer dark mode? Because light attracts bugs.",
+    author: "Anonymous"
+  },
+  {
+    quote: "I can fix the world but they won't give me the source code.",
+    author: "Anonymous"
+  },
+]

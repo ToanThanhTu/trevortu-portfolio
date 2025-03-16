@@ -1,40 +1,9 @@
 import InfiniteCarousel from "@/components/infinite-carousel"
 import Tile from "@/components/tile/Tile"
-import { Testimonial } from "@/lib/types"
+import { testimonials } from "@/lib/data"
 import Image from "next/image"
 
 export default function Testimonials() {
-  const testimonials: Testimonial[] = [
-    {
-      name: "Fredrick Widjaya",
-      title: "Lead Software Engineer",
-      testimonial:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus.",
-      companyLogo: "https://placehold.co/100x50",
-    },
-    {
-      name: "Kiran Kumar",
-      title: "Lead Software Engineer",
-      testimonial:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus.",
-      companyLogo: "https://placehold.co/100x50",
-    },
-    {
-      name: "Vysakh Shaji",
-      title: "Senior Software Engineer",
-      testimonial:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus.",
-      companyLogo: "https://placehold.co/100x50",
-    },
-    {
-      name: "Fredrick Widjaya",
-      title: "Lead Software Engineer",
-      testimonial:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nisi id libero luctus.",
-      companyLogo: "https://placehold.co/100x50",
-    },
-  ]
-
   return (
     <Tile transitionFrom="bottom">
       <h2 className="uppercase text-3xl font-medium">Testimonials</h2>
@@ -50,9 +19,9 @@ export default function Testimonials() {
               <Image
                 src={companyLogo}
                 alt={name}
-                width={100}
-                height={50}
-                className="object-cover"
+                width={200}
+                height={0}
+                className="object-cover w-20"
               />
             </div>
             <p className="mt-2 text-foreground-secondary">"{testimonial}"</p>

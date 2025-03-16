@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background-primary: hsl(24, 9.8%, 10%);
+  --background-primary: hsl(24, 10%, 10%);
   --background-secondary: hsl(12, 6%, 15%);
   --foreground-primary: hsl(60, 4.8%, 95.9%);
   --foreground-secondary: hsl(24, 5%, 64%);

@@ -10,15 +10,16 @@ import Toolbox from "@/components/toolbox"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { motion } from "motion/react"
+import RandomQuotes from "@/components/others/RandomQuotes"
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-full">
       <About />
       <FeaturedWork />
 
       {/* Layout for desktop */}
-      <div className={cn("hidden", "xl:grid grid-cols-3 gap-4")}>
+      <div className={cn("hidden", "xl:grid xl:grid-cols-3 xl:gap-4")}>
         <div className={cn("col-span-2")}>
           <Toolbox />
 
@@ -28,13 +29,14 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3 }}
               viewport={{ once: true }}
+              className="overflow-hidden"
             >
               <Image
-                src="https://placehold.co/400x600"
-                alt="placeholder"
+                src="/coffee-laptop.webp"
+                alt="Coffee and laptop photo"
                 width={400}
                 height={600}
-                className={cn("w-full rounded-xl object-cover")}
+                className={cn("w-full h-[610px] rounded-xl object-cover overflow-hidden")}
               />
             </motion.div>
 
@@ -45,7 +47,10 @@ export default function Home() {
           </div>
         </div>
 
-        <Motivation />
+        <div>
+          <Motivation />
+          <RandomQuotes />
+        </div>
       </div>
 
       {/* Layout for smaller screens */}

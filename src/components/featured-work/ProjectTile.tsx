@@ -15,18 +15,15 @@ interface Props {
 }
 
 export default function ProjectTile({
-  project: { title, slug, type, shortDescription, images, width, height },
+  project: { title, slug, type, images, width, height },
   transitionFrom,
   className,
 }: Props) {
   return (
     <div className="relative group">
-      <Link
-        href={`work/${slug}`}
-        className={cn("z-20", "group-hover:blur-xs", "transition-all duration-300")}
-      >
+      <Link href={`work/${slug}`} className={cn("z-20", "transition-all duration-300")}>
         <Tile
-          className={cn("p-0 m-0 rounded-xl overflow-hidden", className)}
+          className={cn("m-0 rounded-xl overflow-hidden p-0 pt-6 px-6 bg-blue-50", className)}
           transitionFrom={transitionFrom}
         >
           <Image
@@ -34,7 +31,10 @@ export default function ProjectTile({
             alt={`Project ${title} Photo`}
             width={width}
             height={height}
-            className={cn("rounded-xl object-cover w-full")}
+            className={cn(
+              "rounded-t-xl object-cover w-full shadow-[12px_20px_40px_rgba(28,25,23)]",
+              "group-hover:blur-[2px]"
+            )}
           />
         </Tile>
       </Link>
@@ -45,8 +45,7 @@ export default function ProjectTile({
           whileHover={{ opacity: 0.8 }}
           transition={{ duration: 0.3 }}
           className={cn(
-            "absolute inset-0 bg-background-primary rounded-xl m-[-6px] flex-col items-stretch justify-between p-12",
-            "group-hover:flex"
+            "absolute inset-0 bg-background-primary rounded-xl flex flex-col items-stretch justify-between p-8"
           )}
         >
           <ArrowUpRight
@@ -58,7 +57,6 @@ export default function ProjectTile({
           <div>
             <h2 className={cn("text-2xl text-foreground-primary font-medium")}>{title}</h2>
             <h3 className={cn("text-lg text-foreground-primary italic")}>{type}</h3>
-            <p className={cn("text-foreground-secondary")}>{shortDescription}</p>
           </div>
         </motion.div>
       </Link>

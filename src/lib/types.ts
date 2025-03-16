@@ -16,6 +16,7 @@ export type Project = {
   images: string[]
   width?: number
   height?: number
+  url: string
 }
 
 export type Testimonial = {
@@ -23,4 +24,9 @@ export type Testimonial = {
   title: string
   testimonial: string
   companyLogo: string
+}
+
+export type Quote = {
+  quote: string
+  author: string
 }

@@ -5,10 +5,10 @@ import { useEffect, useState } from "react"
 type MediaQuery = "sm" | "md" | "lg" | "xl" | "2xl"
 
 export default function useMediaQuery(query: MediaQuery) {
-  const [isMatched, setIsMatched] = useState(false)
+  const [isMatched, setIsMatched] = useState<boolean | undefined>(undefined)
 
   useEffect(() => {
-    if (typeof window === "undefined") return
+    if (typeof window === "undefined") return undefined
 
     const getQuerySize = (query: MediaQuery) => {
       switch (query) {
