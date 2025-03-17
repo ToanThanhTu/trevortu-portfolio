@@ -33,10 +33,10 @@ export default function Contact() {
   })
 
   async function onSubmit(values: ContactFormSchemaType) {
-    await sendEmail(values)
+    const errorMessage = await sendEmail(values)
 
-    if (error) {
-      toast.error(`${error} :(`, {
+    if (errorMessage) {
+      toast.error(`${errorMessage} :(`, {
         description: "Please try again later or contact me through other means.",
         action: {
           label: "Close",
@@ -44,17 +44,17 @@ export default function Contact() {
         },
       })
       return
-    } else {
-      toast.success("Message sent!", {
-        description: `Thanks ${values.name} for contacting me! I'll get back to you soon.`,
-        action: {
-          label: "Close",
-          onClick: () => {},
-        },
-      })
-
-      controller.reset()
     }
+
+    toast.success("Message sent!", {
+      description: `Thanks ${values.name} for contacting me! I'll get back to you soon.`,
+      action: {
+        label: "Close",
+        onClick: () => {},
+      },
+    })
+
+    controller.reset()
   }
 
   return (

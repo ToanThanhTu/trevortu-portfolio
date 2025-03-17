@@ -11,6 +11,7 @@ export default function useSendEmail() {
   async function sendEmail(values: ContactFormSchemaType) {
     try {
       setLoading(true)
+      setError(null)
 
       const response = await fetch("/api/email-to-trevor", {
         method: "POST",
@@ -23,15 +24,19 @@ export default function useSendEmail() {
       const data = await response.json()
 
       if (!response.ok || data.error) {
-        setError("Failed to send email")
+        setError(data.error || "Failed to send email")
         setLoading(false)
-        return
+        return data.error || "Failed to send email"
       }
-      setLoading(false)
+
       setSuccess(true)
-    } catch (error) {
-      setError("Something went wrong. Please try again later.")
       setLoading(false)
+      return null
+    } catch (error: any) {
+      const errorMessage = error.message || "Something went wrong. Please try again later."      
+      setError(errorMessage)
+      setLoading(false)
+      return errorMessage
     }
   }
 
