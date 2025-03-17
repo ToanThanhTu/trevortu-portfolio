@@ -107,7 +107,7 @@ export default function Contact() {
               </FormItem>
             )}
           />
-          <Button type="submit" className="bg-white text-black w-full cursor-pointer">
+          <Button type="submit" className="bg-white text-black w-full cursor-pointer" disabled={loading}>
             {loading ? <LoaderPinwheel className="animate-spin" /> : "Submit"}
           </Button>
         </form>

@@ -29,6 +29,14 @@ export default function useSendEmail() {
         return data.error || "Failed to send email"
       }
 
+      await fetch("/api/email-to-client", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      })
+
       setSuccess(true)
       setLoading(false)
       return null

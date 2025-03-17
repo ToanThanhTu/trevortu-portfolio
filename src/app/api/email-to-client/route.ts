@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer")
 
 export async function POST(request: NextRequest) {
   const { name, email, message } = await request.json()
-  const subject = `New message from ${name} through your portfolio website`
+  const subject = `Trevor Tu: Contact Confirmation`
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -18,12 +18,17 @@ export async function POST(request: NextRequest) {
 
   const mailOptions = {
     from: `"No-reply" <${process.env.GMAIL_FROM}>`,
-    to: "trevor.tu@outlook.com",
+    to: email,
     subject: subject,
     html: `
-      <p>You have a new message from ${name} (${email}):</p>
+      <p>Thanks ${name} for contacting me!</p>
       <br />
-      <p>${message}</p>
+      <p>Here is your contact form records:</p>
+      <p>Name: ${name}</p>
+      <p>Email: ${email}</p>
+      <p>Message: ${message}</p>
+      <br />
+      <p>I'll get back to you soon.</p>
     `,
   }
 
