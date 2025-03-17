@@ -29,3 +29,9 @@ export type Quote = {
   quote: string
   author: string
 }
+
+export type Email = {
+  name: string
+  email: string
+  message: string
+}

@@ -15,10 +15,14 @@ import { Input } from "@/components/shadcn/input"
 import { Button } from "@/components/shadcn/button"
 import Tile from "@/components/tile/Tile"
 import { Textarea } from "@/components/shadcn/textarea"
-import { toast } from "sonner"
 import { cn } from "@/lib/utils"
+import useSendEmail from "@/hooks/useSendEmail"
+import { LoaderPinwheel } from "lucide-react"
+import { toast } from "sonner"
 
 export default function Contact() {
+  const { loading, error, sendEmail } = useSendEmail()
+
   const controller = useForm<ContactFormSchemaType>({
     resolver: zodResolver(ContactFormSchema),
     defaultValues: {
@@ -28,15 +32,29 @@ export default function Contact() {
     },
   })
 
-  function onSubmit(values: ContactFormSchemaType) {
-    console.log(values)
-    toast.success("Message sent!", {
-      description: `Thanks ${values.name} for contacting me! I'll get back to you soon.`,
-      action: {
-        label: "Close",
-        onClick: () => {},
-      },
-    })
+  async function onSubmit(values: ContactFormSchemaType) {
+    await sendEmail(values)
+
+    if (error) {
+      toast.error(`${error} :(`, {
+        description: "Please try again later or contact me through other means.",
+        action: {
+          label: "Close",
+          onClick: () => {},
+        },
+      })
+      return
+    } else {
+      toast.success("Message sent!", {
+        description: `Thanks ${values.name} for contacting me! I'll get back to you soon.`,
+        action: {
+          label: "Close",
+          onClick: () => {},
+        },
+      })
+
+      controller.reset()
+    }
   }
 
   return (
@@ -89,8 +107,8 @@ export default function Contact() {
               </FormItem>
             )}
           />
-          <Button type="submit" className="bg-white text-black w-full">
-            Submit
+          <Button type="submit" className="bg-white text-black w-full cursor-pointer">
+            {loading ? <LoaderPinwheel className="animate-spin" /> : "Submit"}
           </Button>
         </form>
       </Form>
