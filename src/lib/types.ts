@@ -11,8 +11,7 @@ export type Project = {
   title: string
   slug: string
   type: string
-  shortDescription: string
-  longDescription: string
+  description: string
   images: string[]
   width?: number
   height?: number

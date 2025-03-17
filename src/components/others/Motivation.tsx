@@ -14,17 +14,21 @@ export default function Motivation() {
   }
 
   return (
-    <Tile className={cn("flex flex-col gap-4 md:h-[580px] my-0 py-8", "xl:my-4 xl:h-fit")} transitionFrom={isXl ? "right" : "left"}>
+    <Tile
+      className={cn("flex flex-col gap-4 md:h-[580px] my-0 py-8", "xl:my-4 xl:h-fit")}
+      transitionFrom={isXl ? "right" : "left"}
+    >
       <h2 className="uppercase text-3xl font-medium">Motivation</h2>
 
-      <p className="text-foreground-secondary h-[336px] overflow-y-auto">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et
-        consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in
-        volutpat eros, eget sollicitudin leo. Praesent consectetur egestas tempus. Etiam in finibus
-        nibh. Mauris posuere dignissim leo ac consectetur. Duis id dui pretium, fermentum lorem
-        pellentesque, mollis eros. Donec ut vestibulum dui, non viverra nibh. Duis ultricies
-        ultrices lectus, eu rhoncus orci molestie in. Quisque scelerisque, neque facilisis malesuada
-        sodales, mi ipsum auctor leo, ac luctus lacus neque in risus.
+      <p className="text-sm text-foreground-secondary h-[336px] overflow-y-auto">
+        I am passionate about building high-quality, scalable web applications that enhance user
+        experience and drive business success. My motivation comes from solving complex problems,
+        optimizing performance, and continuously learning new technologies. Whether developing
+        intuitive user interfaces, designing efficient backend systems, or integrating APIs, I
+        thrive on creating seamless digital experiences. I believe in writing clean, maintainable
+        code and leveraging modern frameworks to build innovative solutions. My goal is to
+        contribute to projects that make a meaningful impact while growing as a developer in a
+        collaborative and fast-paced environment.
       </p>
 
       <Image

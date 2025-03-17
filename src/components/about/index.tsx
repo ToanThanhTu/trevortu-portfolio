@@ -79,11 +79,14 @@ export default function About() {
 
         <div className={cn("md:grid md:grid-cols-2 md:gap-4")}>
           <Tile transitionFrom="left" className={cn("md:my-0 md:h-60", "xl:h-72")}>
-            <p className="text-foreground-primary">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et
-              consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus.
-              Ut in volutpat eros, eget sollicitudin leo. Praesent consectetur egestas tempus. Etiam
-              in finibus nibh.
+            <p className={cn("text-sm text-foreground-primary", "md:h-48 md:overflow-y-auto", "lg:h-auto")}>
+              Hey, I’m Trevor Tu, a full stack developer who loves building sleek, high-performance
+              web applications with TypeScript, React, Next.js for smooth, responsive user
+              experience, and Node.js, .NET, NoSQL/SQL databases for scalable, efficient systems.
+              Whether it’s designing intuitive UIs, fine-tuning APIs, or deploying to the cloud, I
+              enjoy turning ideas into functional, well-built applications all while writing clean,
+              maintainable code, and learning new technologies and skills to craft seamless digital
+              experiences.
             </p>
           </Tile>
 

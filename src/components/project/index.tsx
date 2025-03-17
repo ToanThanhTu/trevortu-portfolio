@@ -19,10 +19,10 @@ export default function ProjectDetails({ project }: Props) {
   return (
     <div className={cn("grid grid-cols-1 gap-4 my-4", "xl:grid-cols-3")}>
       <div className={cn("flex flex-col gap-4", "xl:col-span-2")}>
-        <Tile className={cn("m-0")} transitionFrom={isXl ? "left" : "right"}>
+        <Tile className={cn("m-0 pb-6")} transitionFrom={isXl ? "left" : "right"}>
           <div>
-            <h1 className="uppercase text-4xl font-medium">{project.title}</h1>
-            <h2 className="italic text-2xl">{project.type}</h2>
+            <h1 className="uppercase text-3xl font-semibold">{project.title}</h1>
+            <h2 className="italic text-xl">{project.type}</h2>
           </div>
         </Tile>
 
@@ -34,7 +34,7 @@ export default function ProjectDetails({ project }: Props) {
           containerClassName={cn(
             "h-[300px] bg-blue-50 px-8 pt-6",
             "md:h-[500px] md:pt-12 md:px-20",
-            "xl:h-[660px]"
+            "xl:h-[702px]"
           )}
           imageClassName={cn("shadow-[12px_20px_40px_rgba(28,25,23)]")}
           transitionFrom="left"
@@ -42,8 +42,8 @@ export default function ProjectDetails({ project }: Props) {
       </div>
 
       <div className={cn("flex flex-col gap-4")}>
-        <Tile className={cn("m-0", "xl:h-[272px]")} transitionFrom="right">
-          <p>{project.longDescription}</p>
+        <Tile className={cn("m-0", "xl:h-[300px]")} transitionFrom="right">
+          <p className={cn("text-foreground-primary text-sm", "xl:max-h-[250px] xl:overflow-y-auto")}>{project.description}</p>
         </Tile>
 
         <div className={cn("grid grid-cols-1 gap-4", "md:grid-cols-2", "xl:grid-cols-1")}>

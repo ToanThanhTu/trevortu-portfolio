@@ -25,7 +25,7 @@ export default function Footer() {
             transitionFrom={isMd ? "bottom" : "left"}
           >
             <p className="text-foreground-secondary">
-              © 2024. All Rights Reserved. Designed & Built by{" "}
+              © 2025. All Rights Reserved. Designed & Built by{" "}
               <Link href="https://github.com/ToanThanhTu" target="_blank" className="text-white">
                 Trevor Tu
               </Link>

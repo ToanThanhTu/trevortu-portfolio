@@ -14,10 +14,10 @@ export default function JobDescription({
       <h2 className="capitalized italic text-lg leading-6">
         {company} - {location}
       </h2>
-      <h3 className="text-sm text-foreground-secondary leading-7">
+      <h3 className="text-xs text-foreground-secondary leading-7">
         {start_date} - {end_date}
       </h3>
-      <p className="text-base text-foreground-secondary leading-5">{description}</p>
+      <p className="text-sm text-foreground-secondary leading-5">{description}</p>
     </div>
   )
 }
