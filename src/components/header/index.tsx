@@ -22,7 +22,10 @@ export default function Header() {
             )}
           >
             <div className={cn("flex items-center justify-between gap-4")}>
-              <Link href="/" className="text-2xl">
+              <Link
+                href="/"
+                className="text-2xl transition-opacity ease-in-out duration-300 hover:opacity-80"
+              >
                 <span className="italic font-base">Trevor</span>
                 <span className="font-semibold">Portfolio</span>
               </Link>
@@ -37,9 +40,9 @@ export default function Header() {
                   transition={{ duration: 0.3 }}
                 >
                   {isMenuOpen ? (
-                    <X className={"size-8"} strokeWidth={1} />
+                    <X className={"size-8 text-foreground-secondary"} strokeWidth={2} />
                   ) : (
-                    <Menu className="size-8" strokeWidth={1} />
+                    <Menu className="size-8 text-foreground-secondary" strokeWidth={2} />
                   )}
                 </motion.div>
               </Button>
@@ -48,13 +51,28 @@ export default function Header() {
               <nav className={cn("hidden", "md:block")}>
                 <ul className="flex gap-12 justify-center mx-4">
                   <li>
-                    <Link href="/">About</Link>
+                    <Link
+                      href="/"
+                      className="font-medium transition-opacity ease-in-out duration-300 hover:opacity-80"
+                    >
+                      About
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/work">Work</Link>
+                    <Link
+                      href="/work"
+                      className="font-medium transition-opacity ease-in-out duration-300 hover:opacity-80"
+                    >
+                      Work
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/#contact">Contact</Link>
+                    <Link
+                      href="/#contact"
+                      className="font-medium transition-opacity ease-in-out duration-300 hover:opacity-80"
+                    >
+                      Contact
+                    </Link>
                   </li>
                 </ul>
               </nav>
@@ -70,13 +88,13 @@ export default function Header() {
             >
               <ul className="flex flex-col gap-5 text-2xl">
                 <li>
-                  <Link href="/">About</Link>
+                  <Link href="/" className="font-medium">About</Link>
                 </li>
                 <li>
-                  <Link href="/work">Work</Link>
+                  <Link href="/work" className="font-medium">Work</Link>
                 </li>
                 <li>
-                  <Link href="/#contact">Contact</Link>
+                  <Link href="/#contact" className="font-medium">Contact</Link>
                 </li>
               </ul>
             </nav>

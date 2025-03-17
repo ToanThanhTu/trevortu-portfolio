@@ -13,13 +13,23 @@ export default function Socials({ containerClassName }: { containerClassName?: s
       <Link
         href={"https://www.linkedin.com/in/trevor-tu/"}
         target="_blank"
-        className="text-5xl font-bold text-white bg-linkedin h-20 w-22 rounded-xl flex items-center justify-center"
+        className={cn(
+          "text-5xl font-bold text-foreground-primary bg-linkedin h-20 w-22 rounded-xl flex items-center justify-center transition-colors ease-in-out duration-300",
+          "xl:bg-background-primary xl:text-foreground-secondary xl:hover:bg-linkedin xl:hover:text-foreground-primary"
+        )}
       >
         in
       </Link>
 
-      <Link href="https://github.com/ToanThanhTu" target="_blank">
-        <FaGithub size={74} color="white" />
+      <Link
+        href="https://github.com/ToanThanhTu"
+        target="_blank"
+        className={cn(
+          "transition-colors ease-in-out duration-300",
+          "xl:text-foreground-secondary xl:hover:text-foreground-primary"
+        )}
+      >
+        <FaGithub size={74} />
       </Link>
     </Tile>
   )

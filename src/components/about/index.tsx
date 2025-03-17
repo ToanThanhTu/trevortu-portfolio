@@ -79,7 +79,13 @@ export default function About() {
 
         <div className={cn("md:grid md:grid-cols-2 md:gap-4")}>
           <Tile transitionFrom="left" className={cn("md:my-0 md:h-60", "xl:h-72")}>
-            <p className={cn("text-sm text-foreground-primary", "md:h-48 md:overflow-y-auto", "lg:h-auto")}>
+            <p
+              className={cn(
+                "text-sm text-foreground-primary",
+                "md:h-48 md:overflow-y-auto",
+                "lg:h-auto"
+              )}
+            >
               Hey, I’m Trevor Tu, a full stack developer who loves building sleek, high-performance
               web applications with TypeScript, React, Next.js for smooth, responsive user
               experience, and Node.js, .NET, NoSQL/SQL databases for scalable, efficient systems.
@@ -90,7 +96,11 @@ export default function About() {
             </p>
           </Tile>
 
-          <Link href="mailto:trevor.tu@outlook.com" target="_blank">
+          <Link
+            href="mailto:trevor.tu@outlook.com"
+            target="_blank"
+            className={cn("transition-opacity ease-in-out duration-300 hover:opacity-80")}
+          >
             <Tile
               className={cn(
                 "flex flex-col justify-between h-60 bg-background-secondary my-0",
