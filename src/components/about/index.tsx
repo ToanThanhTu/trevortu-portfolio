@@ -1,7 +1,7 @@
 "use client"
 
 import Experience from "@/components/about/experience"
-import Tile from "@/components/tile/Tile"
+import Tile from "@/components/tile"
 import { cn } from "@/lib/utils"
 import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"

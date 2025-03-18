@@ -1,6 +1,6 @@
 "use client"
 
-import Tile from "@/components/tile/Tile"
+import Tile from "@/components/tile"
 import { cn } from "@/lib/utils"
 import { animate, useMotionValue } from "motion/react"
 import { motion } from "motion/react"

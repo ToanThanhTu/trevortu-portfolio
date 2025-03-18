@@ -1,7 +1,6 @@
 "use client"
 
 import InfiniteCarousel from "@/components/infinite-carousel"
-import Tile from "@/components/tile/Tile"
 import { FaFigma } from "react-icons/fa"
 import { RiNextjsFill } from "react-icons/ri"
 import { FaReact } from "react-icons/fa"
@@ -18,6 +17,7 @@ import { FaDocker } from "react-icons/fa"
 import { RiTailwindCssFill } from "react-icons/ri"
 import { FaHtml5 } from "react-icons/fa"
 import { FaCss3 } from "react-icons/fa"
+import Tile from "@/components/tile"
 
 export default function Toolbox() {
   const toolList = [

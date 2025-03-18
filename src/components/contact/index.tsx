@@ -13,7 +13,7 @@ import {
 } from "@/components/shadcn/form"
 import { Input } from "@/components/shadcn/input"
 import { Button } from "@/components/shadcn/button"
-import Tile from "@/components/tile/Tile"
+import Tile from "@/components/tile"
 import { Textarea } from "@/components/shadcn/textarea"
 import { cn } from "@/lib/utils"
 import useSendEmail from "@/hooks/useSendEmail"
@@ -101,7 +101,7 @@ export default function Contact() {
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Tell me more..." {...field} className="xl:min-h-36" />
+                  <Textarea placeholder="Tell me more..." {...field} className={cn("md:min-h-32", "xl:min-h-40")} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -109,7 +109,7 @@ export default function Contact() {
           />
           <Button
             type="submit"
-            className="bg-white text-black w-full cursor-pointer transition-opacity ease-in-out duration-300 hover:opacity-80"
+            className="bg-white text-black font-bold w-full cursor-pointer transition-opacity ease-in-out duration-300 hover:opacity-80"
             disabled={loading}
           >
             {loading ? <LoaderPinwheel className="animate-spin" /> : "Submit"}

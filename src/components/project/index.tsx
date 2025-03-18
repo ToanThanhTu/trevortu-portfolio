@@ -1,9 +1,11 @@
 import ErrorTile from "@/components/error/ErrorTile"
 import ImageWithMotion from "@/components/image-with-motion"
-import Tile from "@/components/tile/Tile"
+import Tile from "@/components/tile"
 import useMediaQuery from "@/hooks/useMediaQuery"
 import { Project } from "@/lib/types"
 import { cn } from "@/lib/utils"
+import { ExternalLink } from "lucide-react"
+import Link from "next/link"
 
 interface Props {
   project: Project
@@ -19,12 +21,33 @@ export default function ProjectDetails({ project }: Props) {
   return (
     <div className={cn("grid grid-cols-1 gap-4 my-4", "xl:grid-cols-3")}>
       <div className={cn("flex flex-col gap-4", "xl:col-span-2")}>
-        <Tile className={cn("m-0 pb-6")} transitionFrom={isXl ? "left" : "right"}>
-          <div>
-            <h1 className="uppercase text-3xl font-semibold">{project.title}</h1>
-            <h2 className="italic text-xl">{project.type}</h2>
-          </div>
-        </Tile>
+        <div className={cn("flex gap-4")}>
+          <Tile
+            className={cn("m-0 pb-6")}
+            transitionFrom={isXl ? "left" : "right"}
+            containerClassName="grow"
+          >
+            <div>
+              <h1 className={cn("uppercase text-xl font-semibold", "md:text-3xl")}>{project.title}</h1>
+              <h2 className={cn("italic text-lg", "md:text-xl")}>{project.type}</h2>
+            </div>
+          </Tile>
+
+          <Link
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity ease-in-out duration-300 h-full"
+          >
+            <Tile
+              transitionFrom="right"
+              className={cn("flex flex-col items-end justify-center m-0 py-7", "md:py-8")}
+            >
+              <ExternalLink size={20} />
+              <p className={cn("text-xl", "md:text-lg")}>Visit</p>
+            </Tile>
+          </Link>
+        </div>
 
         <ImageWithMotion
           src={project.images[0]}
@@ -43,7 +66,11 @@ export default function ProjectDetails({ project }: Props) {
 
       <div className={cn("flex flex-col gap-4")}>
         <Tile className={cn("m-0", "xl:h-[300px]")} transitionFrom="right">
-          <p className={cn("text-foreground-primary text-sm", "xl:max-h-[250px] xl:overflow-y-auto")}>{project.description}</p>
+          <p
+            className={cn("text-foreground-primary text-sm", "xl:max-h-[250px] xl:overflow-y-auto")}
+          >
+            {project.description}
+          </p>
         </Tile>
 
         <div className={cn("grid grid-cols-1 gap-4", "md:grid-cols-2", "xl:grid-cols-1")}>
@@ -53,7 +80,7 @@ export default function ProjectDetails({ project }: Props) {
             width={1200}
             height={0}
             transitionFrom={isXl ? "right" : "left"}
-            containerClassName={cn("md:h-[300px]", "xl:h-[250px]")}
+            containerClassName={cn("md:h-[220px]", "lg:h-[300px]", "xl:h-[250px]")}
           />
           <ImageWithMotion
             src={project.images[2]}
@@ -61,7 +88,7 @@ export default function ProjectDetails({ project }: Props) {
             width={1200}
             height={0}
             transitionFrom="right"
-            containerClassName={cn("md:h-[300px]", "xl:h-[250px]")}
+            containerClassName={cn("md:h-[220px]", "lg:h-[300px]", "xl:h-[250px]")}
           />
         </div>
       </div>

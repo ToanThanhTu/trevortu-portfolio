@@ -1,7 +1,7 @@
 "use client"
 
 import ProjectDetails from "@/components/project"
-import Tile from "@/components/tile/Tile"
+import Tile from "@/components/tile"
 import { allProjects } from "@/lib/data"
 import { Project } from "@/lib/types"
 import { usePathname } from "next/navigation"

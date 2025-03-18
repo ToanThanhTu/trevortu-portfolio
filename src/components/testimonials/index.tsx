@@ -1,5 +1,5 @@
 import InfiniteCarousel from "@/components/infinite-carousel"
-import Tile from "@/components/tile/Tile"
+import Tile from "@/components/tile"
 import { testimonials } from "@/lib/data"
 import Image from "next/image"
 

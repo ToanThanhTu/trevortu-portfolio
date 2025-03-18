@@ -1,7 +1,7 @@
 "use client"
 
 import ErrorTile from "@/components/error/ErrorTile"
-import Tile from "@/components/tile/Tile"
+import Tile from "@/components/tile"
 import useMediaQuery from "@/hooks/useMediaQuery"
 import { cn } from "@/lib/utils"
 import Image from "next/image"

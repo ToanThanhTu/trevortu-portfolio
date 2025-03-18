@@ -2,7 +2,7 @@
 
 import ErrorTile from "@/components/error/ErrorTile"
 import Socials from "@/components/socials"
-import Tile from "@/components/tile/Tile"
+import Tile from "@/components/tile"
 import useMediaQuery from "@/hooks/useMediaQuery"
 import { cn } from "@/lib/utils"
 import Link from "next/link"

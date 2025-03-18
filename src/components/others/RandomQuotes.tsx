@@ -1,6 +1,6 @@
 "use client"
 
-import Tile from "@/components/tile/Tile"
+import Tile from "@/components/tile"
 import { quotes } from "@/lib/data"
 import { Quote } from "@/lib/types"
 import { useEffect, useState } from "react"

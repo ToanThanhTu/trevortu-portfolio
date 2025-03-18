@@ -21,10 +21,10 @@ export default function Header() {
               isMenuOpen ? "h-60 md:h-20" : ""
             )}
           >
-            <div className={cn("flex items-center justify-between gap-4")}>
+            <div className={cn("flex items-end justify-between gap-4")}>
               <Link
                 href="/"
-                className="text-2xl transition-opacity ease-in-out duration-300 hover:opacity-80"
+                className="text-2xl transition-opacity ease-in-out duration-300 hover:opacity-80 "
               >
                 <span className="italic font-base">Trevor</span>
                 <span className="font-semibold">Portfolio</span>
@@ -49,7 +49,7 @@ export default function Header() {
 
               {/* Bigger screens navigation */}
               <nav className={cn("hidden", "md:block")}>
-                <ul className="flex gap-12 justify-center mx-4">
+                <ul className="flex gap-12 items-center justify-center mx-4">
                   <li>
                     <Link
                       href="/"

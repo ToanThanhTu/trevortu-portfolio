@@ -1,4 +1,4 @@
-import Tile from "@/components/tile/Tile"
+import Tile from "@/components/tile"
 import { cn } from "@/lib/utils"
 import { GoDotFill } from "react-icons/go"
 

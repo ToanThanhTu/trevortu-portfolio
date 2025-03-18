@@ -1,6 +1,6 @@
 "use client"
 
-import Tile from "@/components/tile/Tile"
+import Tile from "@/components/tile"
 import { Project } from "@/lib/types"
 import { cn } from "@/lib/utils"
 import { ArrowUpRight } from "lucide-react"

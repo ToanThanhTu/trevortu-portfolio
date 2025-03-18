@@ -20,7 +20,7 @@ export default function Tile({
     <motion.div
       initial={{
         opacity: 0,
-        x: transitionFrom === "left" ? -100 : transitionFrom === "right" ? 100 : 0,
+        x: transitionFrom === "left" ? -80 : transitionFrom === "right" ? 80 : 0,
         y: transitionFrom === "bottom" ? 50 : 0,
       }}
       transition={{ duration: 0.5 }}
@@ -30,7 +30,7 @@ export default function Tile({
     >
       <div
         className={cn(
-          "bg-background-primary px-6 pt-6 pb-8 text-foreground-primary border border-stroke rounded-xl my-4",
+          "bg-background-primary p-6 text-foreground-primary border border-stroke rounded-xl my-4",
           className
         )}
       >

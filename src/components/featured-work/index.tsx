@@ -2,7 +2,7 @@
 
 import ErrorTile from "@/components/error/ErrorTile"
 import ProjectTile from "@/components/featured-work/ProjectTile"
-import Tile from "@/components/tile/Tile"
+import Tile from "@/components/tile"
 import useMediaQuery from "@/hooks/useMediaQuery"
 import { featuredProjects } from "@/lib/data"
 import { cn } from "@/lib/utils"
