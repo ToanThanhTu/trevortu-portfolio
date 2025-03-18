@@ -1,4 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
+import emailToTrevor from "@/components/email/to-trevor"
+import EmailToTrevor from "@/components/email/to-trevor"
+import { render } from "@react-email/render"
+import { createElement } from "react"
 
 const nodemailer = require("nodemailer")
 
@@ -16,15 +20,15 @@ export async function POST(request: NextRequest) {
     },
   })
 
+  const html = await render(createElement(EmailToTrevor, { name, email, message }), {
+    pretty: true,
+  })
+
   const mailOptions = {
     from: `"No-reply" <${process.env.GMAIL_FROM}>`,
     to: "trevor.tu@outlook.com",
     subject: subject,
-    html: `
-      <p>You have a new message from ${name} (${email}):</p>
-      <br />
-      <p>${message}</p>
-    `,
+    html,
   }
 
   try {
