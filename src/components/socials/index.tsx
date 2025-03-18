@@ -17,6 +17,7 @@ export default function Socials({ containerClassName }: { containerClassName?: s
           "text-4xl font-bold text-foreground-primary bg-linkedin size-19 rounded-xl flex items-center justify-center transition-colors ease-in-out duration-300",
           "xl:bg-background-primary xl:text-foreground-secondary xl:hover:bg-linkedin xl:hover:text-foreground-primary xl:border xl:border-stroke"
         )}
+        aria-label="Trevor's LinkedIn page"
       >
         in
       </Link>
@@ -28,6 +29,7 @@ export default function Socials({ containerClassName }: { containerClassName?: s
           "transition-colors ease-in-out duration-300",
           "xl:text-foreground-secondary xl:hover:text-foreground-primary"
         )}
+        aria-label="Trevor's GitHub"
       >
         <FaGithub size={74} />
       </Link>

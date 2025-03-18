@@ -34,6 +34,7 @@ export default function Header() {
               <Button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className={cn("p-0 block", "md:hidden")}
+                aria-label="Open or close menu"
               >
                 <motion.div
                   animate={{ rotate: isMenuOpen ? 90 : 0 }}

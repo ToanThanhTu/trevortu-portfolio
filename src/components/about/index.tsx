@@ -50,22 +50,23 @@ export default function About() {
               <Image
                 src="/portrait.webp"
                 alt="portrait"
-                width={400}
-                height={500}
+                width={600}
+                height={900}
                 className={cn(
                   "rounded-lg text-foreground-primary object-cover w-full h-96",
                   "md:h-86",
                   "lg:h-120",
                   "xl:h-96"
                 )}
+                priority
               />
             </motion.div>
           ) : (
             <ImageWithMotion
               src="/portrait.webp"
               alt="portrait"
-              width={400}
-              height={500}
+              width={600}
+              height={900}
               imageClassName={cn(
                 "rounded-lg text-foreground-primary object-cover w-full h-96",
                 "md:h-86",
@@ -73,6 +74,7 @@ export default function About() {
                 "xl:h-96"
               )}
               transitionFrom="right"
+              priority
             />
           )}
         </div>
@@ -100,6 +102,7 @@ export default function About() {
             href="mailto:trevor.tu@outlook.com"
             target="_blank"
             className={cn("transition-opacity ease-in-out duration-300 hover:opacity-80")}
+            aria-label="Email me"
           >
             <Tile
               className={cn(

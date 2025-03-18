@@ -66,7 +66,7 @@ export const featuredProjects: Project[] = [
     slug: "bato-studio",
     type: "Web Development",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo.",
+      "Developed and customized a WordPress-based website for Bato Studio, showcasing their creative architecture portfolio and services with a visually appealing and professional design. Designed and implemented custom WordPress themes and plugins tailored to the client’s needs, ensuring scalability and usability. Optimized website performance through image compression, asset minification, and caching for faster loading times.",
     images: [
       "/bato-studio/main.webp",
       "/bato-studio/secondary-1.webp",
@@ -81,7 +81,7 @@ export const featuredProjects: Project[] = [
     slug: "rush-espresso-bar",
     type: "Web Development",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis, turpis et consectetur consectetur, purus elit porta risus, nec tincidunt lorem ante quis metus. Ut in volutpat eros, eget sollicitudin leo.",
+      "Designed and developed a modern, fully functional website for Rush Espresso Bar using TypeScript, Next.js, and Material-UI (MUI), creating a visually engaging and user-friendly platform to showcase their brand, menu, and café experience. Integrated a contact form for customer inquiries with email notifications, added an interactive Google Maps feature for easy location access, and ensured responsiveness with Tailwind CSS. Deployed the site on Vercel for fast, reliable hosting with automated CI/CD pipelines.",
     images: [
       "/rush-espresso-bar/main.webp",
       "/rush-espresso-bar/secondary-1.webp",

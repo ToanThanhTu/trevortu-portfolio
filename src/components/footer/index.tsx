@@ -26,7 +26,7 @@ export default function Footer() {
           >
             <p className="text-foreground-secondary">
               © 2025. All Rights Reserved. Designed & Built by{" "}
-              <Link href="https://github.com/ToanThanhTu" target="_blank" className="text-white">
+              <Link href="https://github.com/ToanThanhTu" target="_blank" className="text-white underline" aria-label="Trevor's GitHub">
                 Trevor Tu
               </Link>
             </p>

@@ -11,6 +11,7 @@ interface Props {
   containerClassName?: string
   imageClassName?: string
   transitionFrom?: "left" | "right" | "bottom"
+  priority?: boolean
 }
 
 export default function ImageWithMotion({
@@ -21,6 +22,7 @@ export default function ImageWithMotion({
   containerClassName,
   imageClassName,
   transitionFrom,
+  priority,
 }: PropsWithChildren<Props>) {
   return (
     <motion.div
@@ -40,6 +42,7 @@ export default function ImageWithMotion({
         width={width}
         height={height}
         className={cn("w-full rounded-xl object-cover", imageClassName)}
+        priority={priority}
       />
     </motion.div>
   )

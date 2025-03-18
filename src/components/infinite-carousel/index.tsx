@@ -44,18 +44,19 @@ export default function InfiniteCarousel({
     >
       <motion.ul className="absolute left-0 flex gap-4 z-10" ref={ref} style={{ x: xTranslation }}>
         {[...list, ...list].map((item, index) => (
-          <Tile
-            className={cn(
-              `flex items-center justify-center`,
-              "m-0 p-5",
-              "[&_svg]:size-9",
-              "[&_svg]:shrink-0",
-              carouselTileClassname
-            )}
-            key={index}
-          >
-            {item}
-          </Tile>
+          <li key={index}>
+            <Tile
+              className={cn(
+                `flex items-center justify-center`,
+                "m-0 p-5",
+                "[&_svg]:size-9",
+                "[&_svg]:shrink-0",
+                carouselTileClassname
+              )}
+            >
+              {item}
+            </Tile>
+          </li>
         ))}
       </motion.ul>
     </div>

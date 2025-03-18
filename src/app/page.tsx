@@ -14,7 +14,7 @@ import RandomQuotes from "@/components/others/RandomQuotes"
 
 export default function Home() {
   return (
-    <main className="w-full">
+    <main>
       <About />
       <FeaturedWork />
 
