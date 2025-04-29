@@ -107,10 +107,10 @@ export const otherProjects: Project[] = [
     ],
     width: 1280,
     height: 2240,
-    url: "https://nextnetshop-h0frhvgkfuh3fzbb.australiaeast-01.azurewebsites.net",
+    url: "https://nextnet-shop-frontend.vercel.app",
   },
   {
-    title: "TODO App",
+    title: "TO-DO App",
     slug: "todo-app",
     type: "Full Stack Development",
     description:

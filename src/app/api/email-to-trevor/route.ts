@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server"
-import emailToTrevor from "@/components/email/to-trevor"
 import EmailToTrevor from "@/components/email/to-trevor"
 import { render } from "@react-email/render"
 import { createElement } from "react"
