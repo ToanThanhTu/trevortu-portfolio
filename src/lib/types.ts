@@ -7,6 +7,21 @@ export type Job = {
   description: string
 }
 
+export type ProjectSection = {
+  title: string
+  items: string[]
+}
+
+export type TechStackCategory = {
+  category: string
+  technologies: string[]
+}
+
+export type ProjectStat = {
+  value: string
+  label: string
+}
+
 export type Project = {
   title: string
   slug: string
@@ -16,6 +31,10 @@ export type Project = {
   width?: number
   height?: number
   url: string
+  sections?: ProjectSection[]
+  techStack?: TechStackCategory[]
+  stats?: ProjectStat[]
+  architecture?: string
 }
 
 export type Testimonial = {

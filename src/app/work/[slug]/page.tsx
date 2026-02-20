@@ -1,6 +1,7 @@
 "use client"
 
 import ProjectDetails from "@/components/project"
+import RichProjectDetails from "@/components/project/RichProjectDetails"
 import Tile from "@/components/tile"
 import { allProjects } from "@/lib/data"
 import { Project } from "@/lib/types"
@@ -22,9 +23,15 @@ export default function ProjectPage() {
     )
   }
 
+  const isRichProject = project.sections && project.sections.length > 0
+
   return (
     <main>
-      <ProjectDetails project={project} />
+      {isRichProject ? (
+        <RichProjectDetails project={project} />
+      ) : (
+        <ProjectDetails project={project} />
+      )}
     </main>
   )
 }

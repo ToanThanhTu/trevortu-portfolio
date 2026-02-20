@@ -48,7 +48,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <Image
-                src="/portrait.webp"
+                src="/portrait.jpg"
                 alt="portrait"
                 width={600}
                 height={900}
@@ -56,7 +56,7 @@ export default function About() {
                   "rounded-lg text-foreground-primary object-cover w-full h-96",
                   "md:h-86",
                   "lg:h-120",
-                  "xl:h-96"
+                  "xl:h-96",
                 )}
                 priority
               />
@@ -71,7 +71,7 @@ export default function About() {
                 "rounded-lg text-foreground-primary object-cover w-full h-96",
                 "md:h-86",
                 "lg:h-120",
-                "xl:h-96"
+                "xl:h-96",
               )}
               transitionFrom="right"
               priority
@@ -85,7 +85,7 @@ export default function About() {
               className={cn(
                 "text-sm text-foreground-primary",
                 "md:h-48 md:overflow-y-auto",
-                "lg:h-auto"
+                "lg:h-auto",
               )}
             >
               Hey, I’m Trevor Tu, a full stack developer who loves building sleek, high-performance
@@ -108,7 +108,7 @@ export default function About() {
               className={cn(
                 "flex flex-col justify-between h-60 bg-background-secondary my-0",
                 "md:h-60",
-                "xl:h-72"
+                "xl:h-72",
               )}
               transitionFrom={isMd ? "right" : "bottom"}
             >

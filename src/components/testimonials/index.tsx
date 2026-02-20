@@ -27,8 +27,8 @@ export default function Testimonials() {
             <p className="mt-2 text-sm text-foreground-secondary">"{testimonial}"</p>
           </div>
         ))}
-        carouselClassname="m-0 p-0 h-76"
-        carouselTileClassname="h-68 w-80 px-6 py-8 items-start"
+        carouselClassname="m-0 p-0 h-88"
+        carouselTileClassname="h-80 w-80 px-6 py-8 items-start"
       />
     </Tile>
   )
