@@ -4,8 +4,10 @@ import Footer from "@/components/footer"
 import Header from "@/components/header"
 import { cn } from "@/lib/utils"
 
-import "./globals.css"
 import { Toaster } from "@/components/shadcn/sonner"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Trevor Tu Portfolio",
@@ -28,6 +30,7 @@ export default function RootLayout({
           <Footer />
           <Toaster richColors />
         </div>
+        <SpeedInsights />
       </body>
     </html>
   )
