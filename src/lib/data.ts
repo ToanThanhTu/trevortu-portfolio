@@ -56,7 +56,7 @@ export const featuredProjects: Project[] = [
     description:
       "Full-stack, multi-tenant furniture e-commerce platform with customer storefront, admin dashboard, and RESTful API backend. Production deployment serving Australian market with Azure cloud-native infrastructure.",
     images: [
-      "/priceworth/main.png",
+      "/priceworth/main.jpg",
       "/priceworth/secondary-1.jpg",
       "/priceworth/secondary-2.jpg",
       "/priceworth/secondary-3.jpg",
