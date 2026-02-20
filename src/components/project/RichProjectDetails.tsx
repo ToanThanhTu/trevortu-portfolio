@@ -58,8 +58,8 @@ export default function RichProjectDetails({ project }: Props) {
           <ImageWithMotion
             src={project.images[0]}
             alt={`${project.title} Hero`}
-            width={3200}
-            height={5600}
+            width={1280}
+            height={2240}
             containerClassName={cn(
               "h-[300px] bg-blue-50 px-8 pt-6",
               "md:h-[500px] md:pt-12 md:px-20",
