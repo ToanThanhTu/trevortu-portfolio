@@ -1,4 +1,4 @@
-import { Job, Project, Quote, Testimonial } from "@/lib/types"
+import { Job, PlaygroundProject, Project, Quote, Testimonial } from "@/lib/types"
 
 export const experience: Job[] = [
   {
@@ -288,6 +288,51 @@ export const testimonials: Testimonial[] = [
     testimonial:
       "Trevor is a practical and focused developer. His work on integrating REST APIs and streamlining workflows has directly improved project outcomes, and he brings a calm, solution-oriented mindset to every task.",
     companyLogo: "/testimonials/infosys.svg",
+  },
+]
+
+export const playgroundProjects: PlaygroundProject[] = [
+  {
+    name: "Coming Soon",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend magna nec rhoncus pharetra. Cras vitae vehicula turpis. Ut molestie faucibus diam eget dapibus.",
+    image: "https://placehold.co/600x400/1c1917/fafaf9?text=Coming+Soon",
+    url: "https://example.com/Coming-Soon",
+  },
+  {
+    name: "Coming Soon",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend magna nec rhoncus pharetra. Cras vitae vehicula turpis. Ut molestie faucibus diam eget dapibus.",
+    image: "https://placehold.co/600x400/1c1917/fafaf9?text=Coming+Soon",
+    url: "https://example.com/particle-galaxy",
+  },
+  {
+    name: "Coming Soon",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend magna nec rhoncus pharetra. Cras vitae vehicula turpis. Ut molestie faucibus diam eget dapibus.",
+    image: "https://placehold.co/600x400/1c1917/fafaf9?text=Coming+Soon",
+    url: "https://example.com/particle-galaxy",
+  },
+  {
+    name: "Coming Soon",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend magna nec rhoncus pharetra. Cras vitae vehicula turpis. Ut molestie faucibus diam eget dapibus.",
+    image: "https://placehold.co/600x400/1c1917/fafaf9?text=Coming+Soon",
+    url: "https://example.com/particle-galaxy",
+  },
+  {
+    name: "Coming Soon",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend magna nec rhoncus pharetra. Cras vitae vehicula turpis. Ut molestie faucibus diam eget dapibus.",
+    image: "https://placehold.co/600x400/1c1917/fafaf9?text=Coming+Soon",
+    url: "https://example.com/particle-galaxy",
+  },
+  {
+    name: "Coming Soon",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend magna nec rhoncus pharetra. Cras vitae vehicula turpis. Ut molestie faucibus diam eget dapibus.",
+    image: "https://placehold.co/600x400/1c1917/fafaf9?text=Coming+Soon",
+    url: "https://example.com/particle-galaxy",
   },
 ]
 

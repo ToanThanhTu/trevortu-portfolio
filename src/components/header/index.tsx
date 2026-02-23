@@ -18,7 +18,7 @@ export default function Header() {
             className={cn(
               "uppercase bg-background-primary mx-4 p-5 text-foreground-primary border border-stroke rounded-xl h-20",
               "transition-[height] duration-300 ease-in-out",
-              isMenuOpen ? "h-60 md:h-20" : ""
+              isMenuOpen ? "h-72 md:h-20" : ""
             )}
           >
             <div className={cn("flex items-end justify-between gap-4")}>
@@ -69,6 +69,14 @@ export default function Header() {
                   </li>
                   <li>
                     <Link
+                      href="/playground"
+                      className="font-medium transition-opacity ease-in-out duration-300 hover:opacity-80"
+                    >
+                      Playground
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/#contact"
                       className="font-medium transition-opacity ease-in-out duration-300 hover:opacity-80"
                     >
@@ -93,6 +101,9 @@ export default function Header() {
                 </li>
                 <li>
                   <Link href="/work" className="font-medium">Work</Link>
+                </li>
+                <li>
+                  <Link href="/playground" className="font-medium">Playground</Link>
                 </li>
                 <li>
                   <Link href="/#contact" className="font-medium">Contact</Link>

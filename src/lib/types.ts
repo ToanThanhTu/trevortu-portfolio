@@ -59,6 +59,15 @@ export type Quote = {
   author: string
 }
 
+/** Interactive playground project that opens in a new tab. */
+export type PlaygroundProject = {
+  name: string
+  description: string
+  image: string
+  animatedImage?: string
+  url: string
+}
+
 /** Contact form submission payload. */
 export type Email = {
   name: string
