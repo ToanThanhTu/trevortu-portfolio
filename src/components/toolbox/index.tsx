@@ -1,57 +1,90 @@
 "use client"
 
+import Playwright from "@/components/icons/Playwright"
 import InfiniteCarousel from "@/components/infinite-carousel"
 import Tile from "@/components/tile"
-// Languages
-import { FaHtml5, FaCss3, FaNodeJs, FaDocker, FaGithub, FaJava, FaAws } from "react-icons/fa"
+import type { IconType } from "react-icons"
+import {
+  FaAws,
+  FaCss3,
+  FaDocker,
+  FaFigma,
+  FaGithub,
+  FaHtml5,
+  FaJava,
+  FaNodeJs,
+  FaReact,
+} from "react-icons/fa"
 import { IoLogoJavascript } from "react-icons/io"
-import { TbBrandTypescript, TbBrandCSharp, TbSql, TbBrandAzure } from "react-icons/tb"
-import { SiPython, SiRedux, SiNestjs, SiExpress, SiDotnet, SiPostgresql, SiMysql, SiMongodb, SiRedis, SiJest, SiCypress } from "react-icons/si"
-// Frontend
-import { FaReact } from "react-icons/fa"
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri"
-// Tools
+import {
+  SiClaude,
+  SiCypress,
+  SiDotnet,
+  SiExpress,
+  SiGithubactions,
+  SiJest,
+  SiMongodb,
+  SiMysql,
+  SiNestjs,
+  SiPostgresql,
+  SiPython,
+  SiRedis,
+  SiRedux,
+  SiReplit,
+  SiTypeorm,
+  SiVercel,
+} from "react-icons/si"
+import { TbBrandAzure, TbBrandCSharp, TbBrandTypescript, TbSql } from "react-icons/tb"
 import { VscVscode } from "react-icons/vsc"
-import { FaFigma } from "react-icons/fa"
+
+/** Name doubles as the React key, so each must be unique. */
+const tools: { name: string; Icon: IconType }[] = [
+  // Languages
+  { name: "HTML5", Icon: FaHtml5 },
+  { name: "CSS3", Icon: FaCss3 },
+  { name: "JavaScript", Icon: IoLogoJavascript },
+  { name: "TypeScript", Icon: TbBrandTypescript },
+  { name: "Python", Icon: SiPython },
+  { name: "C#", Icon: TbBrandCSharp },
+  { name: "Java", Icon: FaJava },
+  // Frontend
+  { name: "React", Icon: FaReact },
+  { name: "Next.js", Icon: RiNextjsFill },
+  { name: "Redux", Icon: SiRedux },
+  { name: "Tailwind CSS", Icon: RiTailwindCssFill },
+  // Backend
+  { name: "Node.js", Icon: FaNodeJs },
+  { name: "Express", Icon: SiExpress },
+  { name: "NestJS", Icon: SiNestjs },
+  { name: ".NET", Icon: SiDotnet },
+  // Databases
+  { name: "PostgreSQL", Icon: SiPostgresql },
+  { name: "MySQL", Icon: SiMysql },
+  { name: "MongoDB", Icon: SiMongodb },
+  { name: "Redis", Icon: SiRedis },
+  { name: "SQL", Icon: TbSql },
+  { name: "TypeORM", Icon: SiTypeorm },
+  // DevOps & Cloud
+  { name: "Docker", Icon: FaDocker },
+  { name: "AWS", Icon: FaAws },
+  { name: "Azure", Icon: TbBrandAzure },
+  { name: "Vercel", Icon: SiVercel },
+  { name: "GitHub", Icon: FaGithub },
+  { name: "GitHub Actions", Icon: SiGithubactions },
+  // Testing
+  { name: "Jest", Icon: SiJest },
+  { name: "Cypress", Icon: SiCypress },
+  { name: "Playwright", Icon: Playwright },
+  // AI & Tools
+  { name: "Claude", Icon: SiClaude },
+  { name: "Replit", Icon: SiReplit },
+  { name: "VS Code", Icon: VscVscode },
+  { name: "Figma", Icon: FaFigma },
+]
 
 export default function Toolbox() {
-  const toolList = [
-    // Languages
-    <FaHtml5 size={44} strokeWidth={1} />,
-    <FaCss3 size={44} strokeWidth={1} />,
-    <IoLogoJavascript size={44} strokeWidth={1} />,
-    <TbBrandTypescript size={44} strokeWidth={1} />,
-    <SiPython size={44} strokeWidth={1} />,
-    <TbBrandCSharp size={44} strokeWidth={1} />,
-    <FaJava size={44} strokeWidth={1} />,
-    // Frontend
-    <FaReact size={44} strokeWidth={1} />,
-    <RiNextjsFill size={44} strokeWidth={1} />,
-    <SiRedux size={44} strokeWidth={1} />,
-    <RiTailwindCssFill size={44} strokeWidth={1} />,
-    // Backend
-    <FaNodeJs size={44} strokeWidth={1} />,
-    <SiExpress size={44} strokeWidth={1} />,
-    <SiNestjs size={44} strokeWidth={1} />,
-    <SiDotnet size={44} strokeWidth={1} />,
-    // Databases
-    <SiPostgresql size={44} strokeWidth={1} />,
-    <SiMysql size={44} strokeWidth={1} />,
-    <SiMongodb size={44} strokeWidth={1} />,
-    <SiRedis size={44} strokeWidth={1} />,
-    <TbSql size={44} strokeWidth={1} />,
-    // DevOps & Cloud
-    <FaDocker size={44} strokeWidth={1} />,
-    <FaAws size={44} strokeWidth={1} />,
-    <TbBrandAzure size={44} strokeWidth={1} />,
-    <FaGithub size={44} strokeWidth={1} />,
-    // Testing
-    <SiJest size={44} strokeWidth={1} />,
-    <SiCypress size={44} strokeWidth={1} />,
-    // Tools
-    <VscVscode size={44} strokeWidth={1} />,
-    <FaFigma size={44} strokeWidth={1} />,
-  ]
+  const toolList = tools.map(({ name, Icon }) => <Icon key={name} size={44} strokeWidth={1} />)
 
   return (
     <Tile transitionFrom="bottom">

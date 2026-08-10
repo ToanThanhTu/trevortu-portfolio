@@ -2,11 +2,20 @@ import { Job, Project, Quote, Testimonial } from "@/lib/types"
 
 export const experience: Job[] = [
   {
+    title: "Full Stack Developer",
+    company: "NSW Rural Fire Service",
+    location: "Sydney, Australia",
+    start_date: "Jul 2026",
+    end_date: "Present",
+    description:
+      "Build Guardian, the multi-agency system NSW RFS and partner agencies use to plan, fund and report on bush fire mitigation statewide. Part of the team migrating a 15-year-old legacy platform to React, Express and Node.js on AWS. Ship features with Claude Code and Replit; the development manager rates the 6-person team as doing the work of 20.",
+  },
+  {
     title: "Full Stack Developer & IT Support",
     company: "HEQS Group",
     location: "Sydney, Australia",
     start_date: "Oct 2025",
-    end_date: "Present",
+    end_date: "Jun 2026",
     description:
       "Report directly to the CEO, managing a global team of 3 developers and overseeing the technical strategy for a $19 million e-commerce portfolio. Led Next.js and React upgrades across 70+ files, refactored codebase to Domain-Driven Architecture, migrated production infrastructure from Heroku to Azure, and established CI/CD pipelines.",
   },
@@ -56,11 +65,11 @@ export const featuredProjects: Project[] = [
     description:
       "Full-stack, multi-tenant furniture e-commerce platform with customer storefront, admin dashboard, and RESTful API backend. Production deployment serving Australian market with Azure cloud-native infrastructure.",
     images: [
-      "/priceworth/main.jpg",
-      "/priceworth/secondary-1.jpg",
-      "/priceworth/secondary-2.jpg",
-      "/priceworth/secondary-3.jpg",
-      "/priceworth/secondary-4.jpg",
+      "/priceworth/main.webp",
+      "/priceworth/secondary-1.webp",
+      "/priceworth/secondary-2.webp",
+      "/priceworth/secondary-3.webp",
+      "/priceworth/secondary-4.webp",
     ],
     width: 1280,
     height: 2240,

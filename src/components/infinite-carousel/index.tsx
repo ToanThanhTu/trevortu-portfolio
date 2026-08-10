@@ -18,22 +18,29 @@ export default function InfiniteCarousel({
   carouselClassname,
   carouselTileClassname,
 }: PropsWithChildren<Props>) {
-  let [ref, { width }] = useMeasure()
+  const [ref, { width }] = useMeasure()
 
   const xTranslation = useMotionValue(0)
 
   useEffect(() => {
-    let controls
-    let finalPosition = -width / 2 - 8
+    // `width` is 0 until the list has been measured.
+    if (!width) return
 
-    controls = animate(xTranslation, [0, finalPosition], {
+    // The list is rendered twice, so scrolling exactly half of it loops seamlessly.
+    const finalPosition = -width / 2 - 8
+
+    const controls = animate(xTranslation, [0, finalPosition], {
       ease: "linear",
       duration: 20,
       repeat: Infinity,
       repeatType: "loop",
       repeatDelay: 0,
     })
-  })
+
+    // Without this, every render stacks another infinite animation on the same
+    // motion value.
+    return () => controls.stop()
+  }, [width, xTranslation])
 
   return (
     <div

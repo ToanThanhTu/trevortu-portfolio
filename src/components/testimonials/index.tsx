@@ -10,7 +10,7 @@ export default function Testimonials() {
 
       <InfiniteCarousel
         list={testimonials.map(({ name, title, testimonial, companyLogo }) => (
-          <div className="">
+          <div key={name}>
             <div className="flex justify-between items-center gap-4 pb-2 border-b border-stroke">
               <div className="h-18 flex flex-col justify-center">
                 <h3 className="text-lg font-semibold">{name}</h3>
@@ -24,7 +24,7 @@ export default function Testimonials() {
                 className="object-cover w-20"
               />
             </div>
-            <p className="mt-2 text-sm text-foreground-secondary">"{testimonial}"</p>
+            <p className="mt-2 text-sm text-foreground-secondary">&ldquo;{testimonial}&rdquo;</p>
           </div>
         ))}
         carouselClassname="m-0 p-0 h-88"

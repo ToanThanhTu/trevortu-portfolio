@@ -2,11 +2,17 @@ import { Body, Container, Heading, Hr, Section, Tailwind, Text } from "@react-em
 
 interface Props {
   name: string
-  email: string
-  message: string
 }
 
-export default function EmailToClient({ name, email, message }: Props) {
+/**
+ * Confirmation sent to whoever submitted the contact form.
+ *
+ * Deliberately does not echo the submitted email or message back. The
+ * destination address is caller-supplied, so echoing caller-supplied content
+ * into it would let this endpoint be used to deliver arbitrary text to
+ * arbitrary inboxes.
+ */
+export default function EmailToClient({ name }: Props) {
   return (
     <Tailwind>
       <Body className="bg-gray-100 p-4 text-center">
@@ -16,29 +22,13 @@ export default function EmailToClient({ name, email, message }: Props) {
           <Hr />
 
           <Section>
-            <Text>I'm looking forward to discuss with you!</Text>
-            <Text>I will get back to you soon!</Text>
+            <Text>I&apos;m looking forward to discussing with you!</Text>
+            <Text>I will get back to you soon.</Text>
           </Section>
 
           <Hr />
 
-          <Section>
-            <Text className="text-center">Here is your contact form record:</Text>
-
-            <Section className="text-left">
-              <Heading as="h3">Name:</Heading>
-              <Text>{name}</Text>
-
-              <Heading as="h3">Email:</Heading>
-              <Text>{email}</Text>
-
-              <Heading as="h3">Message:</Heading>
-              <Text>{message}</Text>
-            </Section>
-          </Section>
-
-          <Hr />
-          <Text>© 2025 | Sydney, NSW 2200 Australia | trevortu-portfolio.vercel.app</Text>
+          <Text>© 2026 | Sydney, NSW 2200 Australia | trevortu.com</Text>
         </Container>
       </Body>
     </Tailwind>

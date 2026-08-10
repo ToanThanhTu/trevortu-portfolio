@@ -22,7 +22,7 @@ export default function RandomQuotes() {
       className="my-0 px-8 h-[288px] flex flex-col items-start justify-center gap-4"
       transitionFrom="right"
     >
-      <p className="italic text-foreground-secondary">"{quote.quote}"</p>
+      <p className="italic text-foreground-secondary">&ldquo;{quote.quote}&rdquo;</p>
       <p className="text-foreground-primary">- {quote.author}</p>
     </Tile>
   )

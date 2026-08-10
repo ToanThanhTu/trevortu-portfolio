@@ -20,7 +20,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={cn("scroll-smooth antialiased", montserrat.className)}>
+    <html
+      lang="en"
+      // Next.js 16 no longer overrides `scroll-behavior` on route changes.
+      // This opts back in so navigation jumps instantly instead of smooth-scrolling.
+      data-scroll-behavior="smooth"
+      className={cn("scroll-smooth antialiased", montserrat.className)}
+    >
       <body className={cn(`bg-black min-w-[380px]`)}>
         <div className={cn("relative flex flex-col w-full h-full my-4 overflow-hidden")}>
           <Header />
