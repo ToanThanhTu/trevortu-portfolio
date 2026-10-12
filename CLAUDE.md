@@ -116,9 +116,15 @@ Two variants are dispatched there:
 - Keep HTML5, CSS3, VS Code, Figma in the toolbox
 - **Committing depends on where the session runs:**
   - **Claude Code on the web** (cloud sessions, `CLAUDE_CODE_REMOTE=true`): commit and
-    push to the session branch on his behalf. The container's git identity defaults to
+    push on his behalf. The container's git identity defaults to
     Claude, so set `git config user.name`/`user.email` to match his existing commits
     (`git log -1 --format='%an <%ae>'`). No AI attribution: no `Co-Authored-By` or
     session trailers, and no mention of Claude or Claude Code in commit messages.
+  - **Branch names (cloud sessions, trial):** the auto-assigned `claude/<random>` branch
+    also names the Vercel preview URL. For a new task, he permits creating and pushing a
+    descriptive branch instead: `<type>/<short-topic>`, where type is `feat`, `fix`,
+    `chore` or `docs` (e.g. `fix/contact-form-validation`). Follow-up commits for an
+    existing PR go to that PR's branch. If the diff view or Create PR button stops
+    following the work, tell him and fall back to the assigned branch.
   - **Anywhere else** (local CLI, desktop): don't commit. Provide commit messages as
     text when asked.
