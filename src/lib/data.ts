@@ -305,42 +305,42 @@ export const playgroundProjects: PlaygroundProject[] = [
     name: "Coming Soon",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend magna nec rhoncus pharetra. Cras vitae vehicula turpis. Ut molestie faucibus diam eget dapibus.",
-    image: "https://placehold.co/600x400/1c1917/fafaf9?text=Coming+Soon",
+    image: "/playground/coming-soon.webp",
     url: "https://example.com/Coming-Soon",
   },
   {
     name: "Coming Soon",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend magna nec rhoncus pharetra. Cras vitae vehicula turpis. Ut molestie faucibus diam eget dapibus.",
-    image: "https://placehold.co/600x400/1c1917/fafaf9?text=Coming+Soon",
+    image: "/playground/coming-soon.webp",
     url: "https://example.com/particle-galaxy",
   },
   {
     name: "Coming Soon",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend magna nec rhoncus pharetra. Cras vitae vehicula turpis. Ut molestie faucibus diam eget dapibus.",
-    image: "https://placehold.co/600x400/1c1917/fafaf9?text=Coming+Soon",
+    image: "/playground/coming-soon.webp",
     url: "https://example.com/particle-galaxy",
   },
   {
     name: "Coming Soon",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend magna nec rhoncus pharetra. Cras vitae vehicula turpis. Ut molestie faucibus diam eget dapibus.",
-    image: "https://placehold.co/600x400/1c1917/fafaf9?text=Coming+Soon",
+    image: "/playground/coming-soon.webp",
     url: "https://example.com/particle-galaxy",
   },
   {
     name: "Coming Soon",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend magna nec rhoncus pharetra. Cras vitae vehicula turpis. Ut molestie faucibus diam eget dapibus.",
-    image: "https://placehold.co/600x400/1c1917/fafaf9?text=Coming+Soon",
+    image: "/playground/coming-soon.webp",
     url: "https://example.com/particle-galaxy",
   },
   {
     name: "Coming Soon",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend magna nec rhoncus pharetra. Cras vitae vehicula turpis. Ut molestie faucibus diam eget dapibus.",
-    image: "https://placehold.co/600x400/1c1917/fafaf9?text=Coming+Soon",
+    image: "/playground/coming-soon.webp",
     url: "https://example.com/particle-galaxy",
   },
 ]
