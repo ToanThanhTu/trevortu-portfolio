@@ -11,7 +11,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <motion.div initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.3 }}>
+    <motion.div data-reveal initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.3 }}>
       <header className={cn("w-full fixed top-4 z-50 min-w-[380px]")}>
         <div className="2xl:max-w-screen-xl 2xl:mx-auto">
           <div

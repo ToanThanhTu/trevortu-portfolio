@@ -8,7 +8,7 @@ export default function AvailableForWork() {
       className={cn("flex items-center justify-center gap-2 relative my-0", "xl:pb-7")}
       transitionFrom="right"
     >
-      <div id="contact">
+      <div>
         <GoDotFill className={cn("absolute text-green-400 animate-ping")} size={20} />
         <GoDotFill className={cn("relative text-green-400")} size={20} />
       </div>

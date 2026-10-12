@@ -4,14 +4,22 @@ import Footer from "@/components/footer"
 import Header from "@/components/header"
 import { cn } from "@/lib/utils"
 
+import MotionProvider from "@/components/motion-provider"
 import { Toaster } from "@/components/shadcn/sonner"
+import { OPEN_GRAPH_DEFAULTS, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Trevor Tu Portfolio",
-  description: "Trevor Tu Portfolio",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | Full Stack Developer`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: OPEN_GRAPH_DEFAULTS,
+  twitter: { card: "summary_large_image" },
 }
 
 export default function RootLayout({
@@ -20,16 +28,24 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={cn("scroll-smooth antialiased", montserrat.className)}>
+    <html
+      lang="en"
+      // Next.js 16 no longer overrides `scroll-behavior` on route changes.
+      // This opts back in so navigation jumps instantly instead of smooth-scrolling.
+      data-scroll-behavior="smooth"
+      className={cn("scroll-smooth antialiased", montserrat.className)}
+    >
       <body className={cn(`bg-black min-w-[380px]`)}>
-        <div className={cn("relative flex flex-col w-full h-full my-4 overflow-hidden")}>
-          <Header />
-          <div className={cn("mx-4 mt-20", "2xl:max-w-screen-xl 2xl:mx-auto 2xl:px-4")}>
-            {children}
+        <MotionProvider>
+          <div className={cn("relative flex flex-col w-full h-full my-4 overflow-hidden")}>
+            <Header />
+            <div className={cn("mx-4 mt-20", "2xl:max-w-screen-xl 2xl:mx-auto 2xl:px-4")}>
+              {children}
+            </div>
+            <Footer />
+            <Toaster richColors />
           </div>
-          <Footer />
-          <Toaster richColors />
-        </div>
+        </MotionProvider>
         <SpeedInsights />
       </body>
     </html>

@@ -21,7 +21,7 @@ import { LoaderPinwheel } from "lucide-react"
 import { toast } from "sonner"
 
 export default function Contact() {
-  const { loading, error, sendEmail } = useSendEmail()
+  const { loading, sendEmail } = useSendEmail()
 
   const controller = useForm<ContactFormSchemaType>({
     resolver: zodResolver(ContactFormSchema),

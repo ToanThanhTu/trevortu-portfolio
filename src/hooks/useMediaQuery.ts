@@ -1,42 +1,40 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useCallback, useSyncExternalStore } from "react"
 
-type MediaQuery = "sm" | "md" | "lg" | "xl" | "2xl"
+// Tailwind 4's default breakpoints, in the same units it emits.
+const breakpoints = {
+  sm: "40rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "80rem",
+  "2xl": "96rem",
+} as const
 
-export default function useMediaQuery(query: MediaQuery) {
-  const [isMatched, setIsMatched] = useState<boolean | undefined>(undefined)
+type MediaQuery = keyof typeof breakpoints
 
-  useEffect(() => {
-    if (typeof window === "undefined") return undefined
+/**
+ * Whether the viewport is at least the given Tailwind breakpoint.
+ *
+ * Returns `false` on the server and during hydration, then the real value, so the
+ * first paint is the mobile variant. Prefer CSS (`xl:hidden`, `md:grid`) for
+ * layout; reach for this only when CSS can't express it, like animation direction.
+ */
+export default function useMediaQuery(query: MediaQuery): boolean {
+  const media = `(width >= ${breakpoints[query]})`
 
-    const getQuerySize = (query: MediaQuery) => {
-      switch (query) {
-        case "sm":
-          return 640
-        case "md":
-          return 768
-        case "lg":
-          return 1024
-        case "xl":
-          return 1280
-        case "2xl":
-          return 1536
-        default:
-          return 0
-      }
-    }
+  const subscribe = useCallback(
+    (onChange: () => void) => {
+      const list = window.matchMedia(media)
+      list.addEventListener("change", onChange)
+      return () => list.removeEventListener("change", onChange)
+    },
+    [media],
+  )
 
-    const handleResize = () => {
-      const width = window.innerWidth
-      setIsMatched(width >= getQuerySize(query))
-    }
-
-    handleResize()
-
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [query])  
-
-  return isMatched
+  return useSyncExternalStore(
+    subscribe,
+    () => window.matchMedia(media).matches,
+    () => false,
+  )
 }

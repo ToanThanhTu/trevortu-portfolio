@@ -3,48 +3,40 @@
 import { ContactFormSchemaType } from "@/modules/contact/factories"
 import { useState } from "react"
 
+// Kept short: the Contact form appends " :(" and its own description to these.
+const GENERIC_ERROR = "Your message could not be sent"
+
 export default function useSendEmail() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
 
-  async function sendEmail(values: ContactFormSchemaType) {
-    try {
-      setLoading(true)
-      setError(null)
+  /** Returns an error message on failure, or `null` when the message was sent. */
+  async function sendEmail(values: ContactFormSchemaType): Promise<string | null> {
+    setLoading(true)
+    setError(null)
 
-      const response = await fetch("/api/email-to-trevor", {
+    try {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       })
 
-      const data = await response.json()
+      if (!response.ok) {
+        const message = response.status === 400 ? "Please check your details" : GENERIC_ERROR
 
-      if (!response.ok || data.error) {
-        setError(data.error || "Failed to send email")
-        setLoading(false)
-        return data.error || "Failed to send email"
+        setError(message)
+        return message
       }
 
-      await fetch("/api/email-to-client", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      })
-
       setSuccess(true)
-      setLoading(false)
       return null
-    } catch (error: any) {
-      const errorMessage = error.message || "Something went wrong. Please try again later."      
-      setError(errorMessage)
+    } catch {
+      setError(GENERIC_ERROR)
+      return GENERIC_ERROR
+    } finally {
       setLoading(false)
-      return errorMessage
     }
   }
 

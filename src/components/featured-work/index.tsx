@@ -1,6 +1,5 @@
 "use client"
 
-import ErrorTile from "@/components/error/ErrorTile"
 import ProjectTile from "@/components/featured-work/ProjectTile"
 import Tile from "@/components/tile"
 import useMediaQuery from "@/hooks/useMediaQuery"
@@ -10,15 +9,6 @@ import { cn } from "@/lib/utils"
 export default function FeaturedWork() {
   const isMd = useMediaQuery("md")
   const isXl = useMediaQuery("xl")
-
-  if (
-    isMd === undefined ||
-    isXl === undefined ||
-    typeof isMd !== "boolean" ||
-    typeof isXl !== "boolean"
-  ) {
-    return <ErrorTile message="Please try again later." />
-  }
 
   return (
     <div
