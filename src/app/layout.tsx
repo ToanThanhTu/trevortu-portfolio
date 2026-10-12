@@ -6,13 +6,20 @@ import { cn } from "@/lib/utils"
 
 import MotionProvider from "@/components/motion-provider"
 import { Toaster } from "@/components/shadcn/sonner"
+import { OPEN_GRAPH_DEFAULTS, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Trevor Tu Portfolio",
-  description: "Trevor Tu Portfolio",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | Full Stack Developer`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: OPEN_GRAPH_DEFAULTS,
+  twitter: { card: "summary_large_image" },
 }
 
 export default function RootLayout({
