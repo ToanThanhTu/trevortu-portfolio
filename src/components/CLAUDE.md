@@ -6,11 +6,16 @@ Each component is a folder with an `index.tsx` entry point.
 
 | Component | Purpose |
 |-----------|---------|
-| `tile/` | Animated card wrapper. Props: `transitionFrom`, `className`, `containerClassName`. All sections use this. |
+| `tile/` | Animated card wrapper. Props: `transitionFrom`, `className`, `containerClassName`. All sections use this. Remounts when `transitionFrom` changes, so a breakpoint-driven direction takes effect after hydration. |
 | `image-with-motion/` | Next.js Image + motion entrance. Props: `src`, `alt`, `width`, `height`, `transitionFrom`, `priority`. |
+| `motion-provider/` | `MotionConfig reducedMotion="user"`, wrapping the app in `layout.tsx`. |
 | `infinite-carousel/` | Auto-scrolling horizontal list. Props: `list` (ReactNode[]), `carouselClassname`, `carouselTileClassname`. Duplicates items internally for seamless loop. |
 
 ## Homepage Sections (rendered in `app/page.tsx`)
+
+`page.tsx` is one tree for every breakpoint, so each section renders once. Don't
+reintroduce separate desktop/mobile copies: that duplicates the form and the
+`#contact` anchor (which sits on the availability + form block).
 
 | Component | Description |
 |-----------|-------------|
@@ -39,5 +44,4 @@ Dispatch logic in `app/work/[slug]/page.tsx` checks `project.sections`.
 | `footer/` | Footer with links |
 | `socials/` | Social media icon links |
 | `email/` | React Email templates. `to-trevor` receives the full submission; `to-client` is the sender's confirmation and takes **only `name`** by design, since it is delivered to a caller-supplied address. |
-| `error/` | Error display component. Note: six components currently render this on their first paint, which is a bug. See `docs/AUDIT.md`. |
 | `shadcn/` | shadcn/ui primitives (button, input, label, sonner, etc.) |
