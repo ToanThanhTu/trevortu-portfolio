@@ -8,16 +8,6 @@ import type { NextConfig } from "next";
 // If this ever moves to Docker or a VM, add `output: "standalone"` back, and
 // remember `server.js` does not serve `public/` or `.next/static` by itself:
 //   cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/
-const nextConfig: NextConfig = {
-  images: {
-    dangerouslyAllowSVG: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-      }
-    ]
-  },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
