@@ -1,4 +1,3 @@
-"use client"
 
 import PlaygroundTile from "@/components/playground/PlaygroundTile"
 import Tile from "@/components/tile"
