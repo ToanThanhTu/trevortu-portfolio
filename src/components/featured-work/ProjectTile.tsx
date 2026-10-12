@@ -21,7 +21,7 @@ export default function ProjectTile({
 }: Props) {
   return (
     <div className="relative group">
-      <Link href={`work/${slug}`} className={cn("z-20", "transition-all duration-300")}>
+      <Link href={`/work/${slug}`} className={cn("z-20", "transition-all duration-300")}>
         <Tile
           className={cn("m-0 rounded-xl overflow-hidden p-0 pt-6 px-6 bg-blue-50", className)}
           transitionFrom={transitionFrom}
@@ -39,7 +39,7 @@ export default function ProjectTile({
         </Tile>
       </Link>
 
-      <Link href={`work/${slug}`} className={cn("absolute inset-0 z-10 rounded-xl")}>
+      <Link href={`/work/${slug}`} className={cn("absolute inset-0 z-10 rounded-xl")}>
         <motion.div
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 0.8 }}

@@ -40,3 +40,14 @@
     @apply bg-black;
   }
 }
+
+/*
+ * Entrance animations (`Tile`, `ImageWithMotion`) render with motion's `initial`
+ * state, opacity 0, and rely on JS to reveal them. Without JS, show them as-is.
+ */
+@media (scripting: none) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

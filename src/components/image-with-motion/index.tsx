@@ -1,3 +1,5 @@
+"use client"
+
 import { cn } from "@/lib/utils"
 import { motion } from "motion/react"
 import Image from "next/image"
@@ -26,6 +28,8 @@ export default function ImageWithMotion({
 }: PropsWithChildren<Props>) {
   return (
     <motion.div
+      key={transitionFrom}
+      data-reveal
       initial={{
         x: transitionFrom === "left" ? -100 : transitionFrom === "right" ? 100 : 0,
         y: transitionFrom === "bottom" ? 50 : 0,

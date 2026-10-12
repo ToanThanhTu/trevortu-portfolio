@@ -45,20 +45,22 @@ Do not bump these without checking the peer graph first:
 ```
 src/
 ├── app/
-│   ├── layout.tsx         # Root layout (Header, Footer, Toaster)
-│   ├── page.tsx           # Homepage (client component)
+│   ├── layout.tsx         # Root layout, site-wide metadata (Header, Footer, Toaster)
+│   ├── page.tsx           # Homepage (Server Component)
 │   ├── globals.css        # Tailwind + design tokens
+│   ├── opengraph-image.tsx # 1200x630 share card, rendered at build time
+│   ├── sitemap.ts, robots.ts, not-found.tsx, error.tsx
 │   ├── api/contact/       # Contact form route (POST only)
-│   └── work/[slug]/       # Dynamic project pages
+│   └── work/[slug]/       # Project pages, statically generated
 ├── components/            # See src/components/CLAUDE.md
 ├── fonts/index.ts         # Montserrat font export
-├── hooks/useMediaQuery.ts # Breakpoint hook (sm/md/lg/xl/2xl)
+├── hooks/useMediaQuery.ts # Breakpoint hook (sm/md/lg/xl/2xl), false on the server
 ├── lib/                   # See src/lib/CLAUDE.md
 └── modules/contact/       # Contact form Zod schema
 ```
 
-Known issues and their priority live in [`docs/AUDIT.md`](docs/AUDIT.md). Check it
-before starting work; several open items overlap.
+Known issues and their status live in [`docs/AUDIT.md`](docs/AUDIT.md). Check it
+before starting work, and move items to Resolved with the commit that fixed them.
 
 ## Design Tokens (Tailwind classes)
 
@@ -75,6 +77,12 @@ Colors defined in `globals.css` as CSS variables, mapped via `@theme inline`:
 - **`ImageWithMotion`** — Next.js `Image` with motion entrance animation. Same `transitionFrom` prop.
 - **`InfiniteCarousel`** — Auto-scrolling horizontal carousel. Takes `list` of ReactNode items. Used for toolbox icons and testimonials.
 - **`cn()`** — Tailwind class merge utility (`clsx` + `tailwind-merge`).
+- **Server HTML must be real content.** Pages render on the server, so never return a
+  placeholder while `useMediaQuery` resolves. Do layout with CSS (`hidden xl:block`);
+  use the hook only for things CSS can't do, like animation direction.
+- **Entrance animations start hidden.** Any motion element with an `opacity: 0` or
+  off-screen `initial` needs `data-reveal`, which `globals.css` uses to show it when
+  JS is off. `Tile`, `ImageWithMotion` and the header already have it.
 
 ## Image Conventions
 
@@ -82,7 +90,7 @@ Colors defined in `globals.css` as CSS variables, mapped via `@theme inline`:
 - Secondary project images: **1200x750** (8:5 landscape)
 - Format: **webp**. Keep each file under ~300KB.
 - Images live in `public/<project-slug>/`
-- `next.config.ts` allows remote images from `placehold.co`
+- No remote image hosts are configured in `next.config.ts`
 
 Check the real format before committing, not just the extension: `file public/<slug>/*`.
 Exporting a PNG with a `.jpg` name produces a multi-megabyte file that still looks
@@ -91,7 +99,12 @@ assets stay in git history permanently. See `docs/AUDIT.md` for a live example.
 
 ## Project Pages
 
-Two project page variants dispatched in `src/app/work/[slug]/page.tsx`:
+`src/app/work/[slug]/page.tsx` is a Server Component. `generateStaticParams` builds
+one page per project in `allProjects`, `dynamicParams = false` makes anything else 404,
+and `generateMetadata` sets the title, description and canonical URL. New projects
+appear in `sitemap.ts` automatically.
+
+Two variants are dispatched there:
 - **Standard** (`ProjectDetails`): Simple image gallery + description. Used when `project.sections` is undefined.
 - **Rich** (`RichProjectDetails`): Stats bar, technical sections grid, tech stack badges, architecture summary. Used when `project.sections` exists. Currently only Priceworth uses this.
 
@@ -101,4 +114,17 @@ Two project page variants dispatched in `src/app/work/[slug]/page.tsx`:
 - Keep docs and comments concise
 - Don't add DynamoDB to the toolbox
 - Keep HTML5, CSS3, VS Code, Figma in the toolbox
-- Don't commit on his behalf — provide commit messages as text when asked
+- **Committing depends on where the session runs:**
+  - **Claude Code on the web** (cloud sessions, `CLAUDE_CODE_REMOTE=true`): commit and
+    push on his behalf. The container's git identity defaults to
+    Claude, so set `git config user.name`/`user.email` to match his existing commits
+    (`git log -1 --format='%an <%ae>'`). No AI attribution: no `Co-Authored-By` or
+    session trailers, and no mention of Claude or Claude Code in commit messages.
+  - **Branch names (cloud sessions, trial):** the auto-assigned `claude/<random>` branch
+    also names the Vercel preview URL. For a new task, he permits creating and pushing a
+    descriptive branch instead: `<type>/<short-topic>`, where type is `feat`, `fix`,
+    `chore` or `docs` (e.g. `fix/contact-form-validation`). Follow-up commits for an
+    existing PR go to that PR's branch. If the diff view or Create PR button stops
+    following the work, tell him and fall back to the assigned branch.
+  - **Anywhere else** (local CLI, desktop): don't commit. Provide commit messages as
+    text when asked.

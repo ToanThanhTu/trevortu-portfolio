@@ -51,7 +51,7 @@ GMAIL_APP_PASSWORD=<app password>
 
 ## Docs
 
-- [`docs/AUDIT.md`](docs/AUDIT.md) — known issues, severity, and suggested order of work
+- [`docs/AUDIT.md`](docs/AUDIT.md) - known issues, severity, and what fixed each one
 - `CLAUDE.md` — architecture notes, conventions, and dependency version constraints
 
 ## Tech Stack

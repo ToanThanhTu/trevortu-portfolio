@@ -20,6 +20,11 @@ All portfolio content as typed arrays:
 ### `utils.ts`
 Single `cn()` export — Tailwind class merge utility (`clsx` + `tailwind-merge`).
 
+### `site.ts`
+`SITE_URL`, `SITE_NAME`, `SITE_DESCRIPTION` and `OPEN_GRAPH_DEFAULTS`. A page that sets
+its own `openGraph` replaces the parent's object, so spread the defaults in, and set
+`images` too or the share card is dropped.
+
 ### `mailer.ts`
 Server-only. Pooled nodemailer transport plus `CONTACT_INBOX`, the hardcoded
 destination for contact form submissions. Never import this into a Client
@@ -30,5 +35,6 @@ Component, and never let a request body choose the recipient.
 1. Add a `Project` entry to `featuredProjects` or `otherProjects` in `data.ts`
 2. Place images in `public/<slug>/` as **webp** (main: 1280x2240, secondary: 1200x750, under ~300KB each)
 3. For a rich page: populate `sections`, `techStack`, `stats`, `architecture` fields
-4. The `[slug]` page auto-dispatches to `RichProjectDetails` or `ProjectDetails`
+4. The `[slug]` page auto-dispatches to `RichProjectDetails` or `ProjectDetails`, and the
+   page is statically generated and added to the sitemap automatically
 5. Homepage shows first 4 `featuredProjects` via index — order matters
