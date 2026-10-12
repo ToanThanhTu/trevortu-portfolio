@@ -1,6 +1,5 @@
 "use client"
 
-import ErrorTile from "@/components/error/ErrorTile"
 import Socials from "@/components/socials"
 import Tile from "@/components/tile"
 import useMediaQuery from "@/hooks/useMediaQuery"
@@ -9,10 +8,6 @@ import Link from "next/link"
 
 export default function Footer() {
   const isMd = useMediaQuery("md")
-
-  if (isMd === undefined || typeof isMd !== "boolean") {
-    return <ErrorTile message="Please try again later." />
-  }
 
   return (
     <footer className={cn("w-full")}>

@@ -1,6 +1,5 @@
 "use client"
 
-import ErrorTile from "@/components/error/ErrorTile"
 import ImageWithMotion from "@/components/image-with-motion"
 import Tile from "@/components/tile"
 import useMediaQuery from "@/hooks/useMediaQuery"
@@ -15,10 +14,6 @@ interface Props {
 
 export default function RichProjectDetails({ project }: Props) {
   const isXl = useMediaQuery("xl")
-
-  if (isXl === undefined || typeof isXl !== "boolean") {
-    return <ErrorTile message="Please try again later" />
-  }
 
   return (
     <div className={cn("flex flex-col gap-4 my-4")}>

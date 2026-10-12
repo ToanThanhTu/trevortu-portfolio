@@ -18,6 +18,10 @@ export default function Tile({
 }: PropsWithChildren<Props>) {
   return (
     <motion.div
+      // `initial` is only read on mount, so remount when a breakpoint-driven
+      // direction resolves after hydration.
+      key={transitionFrom}
+      data-reveal
       initial={{
         opacity: 0,
         x: transitionFrom === "left" ? -80 : transitionFrom === "right" ? 80 : 0,

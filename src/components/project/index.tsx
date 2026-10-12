@@ -1,4 +1,5 @@
-import ErrorTile from "@/components/error/ErrorTile"
+"use client"
+
 import ImageWithMotion from "@/components/image-with-motion"
 import Tile from "@/components/tile"
 import useMediaQuery from "@/hooks/useMediaQuery"
@@ -13,10 +14,6 @@ interface Props {
 
 export default function ProjectDetails({ project }: Props) {
   const isXl = useMediaQuery("xl")
-
-  if (isXl === undefined || typeof isXl !== "boolean") {
-    return <ErrorTile message="Please try again later" />
-  }
 
   return (
     <div className={cn("grid grid-cols-1 gap-4 my-4", "xl:grid-cols-3")}>

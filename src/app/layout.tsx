@@ -4,6 +4,7 @@ import Footer from "@/components/footer"
 import Header from "@/components/header"
 import { cn } from "@/lib/utils"
 
+import MotionProvider from "@/components/motion-provider"
 import { Toaster } from "@/components/shadcn/sonner"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -28,14 +29,16 @@ export default function RootLayout({
       className={cn("scroll-smooth antialiased", montserrat.className)}
     >
       <body className={cn(`bg-black min-w-[380px]`)}>
-        <div className={cn("relative flex flex-col w-full h-full my-4 overflow-hidden")}>
-          <Header />
-          <div className={cn("mx-4 mt-20", "2xl:max-w-screen-xl 2xl:mx-auto 2xl:px-4")}>
-            {children}
+        <MotionProvider>
+          <div className={cn("relative flex flex-col w-full h-full my-4 overflow-hidden")}>
+            <Header />
+            <div className={cn("mx-4 mt-20", "2xl:max-w-screen-xl 2xl:mx-auto 2xl:px-4")}>
+              {children}
+            </div>
+            <Footer />
+            <Toaster richColors />
           </div>
-          <Footer />
-          <Toaster richColors />
-        </div>
+        </MotionProvider>
         <SpeedInsights />
       </body>
     </html>

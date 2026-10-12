@@ -1,6 +1,5 @@
 "use client"
 
-import ErrorTile from "@/components/error/ErrorTile"
 import Tile from "@/components/tile"
 import useMediaQuery from "@/hooks/useMediaQuery"
 import { cn } from "@/lib/utils"
@@ -8,10 +7,6 @@ import Image from "next/image"
 
 export default function Motivation() {
   const isXl = useMediaQuery("xl")
-
-  if (isXl === undefined || typeof isXl !== "boolean") {
-    return <ErrorTile message="Please try again later." />
-  }
 
   return (
     <Tile
